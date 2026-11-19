@@ -3,13 +3,26 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Pikogram</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <title>
+        @if (ViewData["Title"] == null)
+        {
+            @("Pikagram")
+        }
+        else
+        {
+            @($"{ViewData["Title"]} - Pikagram")
+        }
+    </title>
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body class="body">
 <!--
-Z Reactu a Astra jsem zvyklý dělat si komponentky a skládat je do sebe. Tady to tak jednoduše nejde tak to nechám v layoutu 
-Připadám si jak kdybych programoval v pravěku, ani Hot reload půlku času nefunguje a každej novej partial požaduje restart
+Z Reactu a Astra jsem zvyklý dělat si komponentky a skládat je do sebe. Tady to tak jednoduše nejde, tak to nechám v layoutu 
+Připadám si, jak kdybych programoval v pravěku, ani Hot reload půlku času nefunguje a každej novej partial vyžaduje restart
 Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to nice)
 -->
 <header class="header">
@@ -26,11 +39,14 @@ Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to 
     @RenderBody()
 </main>
 <footer class="footer">
-    Pikogram 2026 - Nejpoužívanější Instagram klon v Přerově a Ústeckém kraji
+    Pikagram 2026 - Nejpoužívanější Instagram klon v Přerově a Ústeckém kraji
 </footer>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
-<!-- Vyvíjet se styly v samostatném souboru je neskutečná bolest a některý třídy se mi ani neaplikujou. Má to minimum výhod, takže to budu dělat takhle -->
+<!-- 
+Vyvíjet se styly v samostatným souboru je neskutečná bolest a některý třídy se mi ani neaplikujou. 
+Má to minimum výhod, takže to budu dělat takhle 
+-->
 <style>
     .body {
         
