@@ -2,14 +2,16 @@ namespace Pikogram.Models.Comments;
 
 public class Comment : AbstractComment
 {
-    public List<ReplyComment> Replies { get; }
-    
-    public Comment(User author, string content, DateTime datePublished,
-        List<ReplyComment> replies) : base(author, content, datePublished)
+    public virtual List<ReplyComment> Replies { get; } = [];
+
+    public Comment()
     {
-        Replies = replies;
     }
-    
+
+    public Comment(User author, string content, DateTime datePublished) : base(author, content, datePublished)
+    {
+    }
+
     public void Reply(User author, string content)
     {
         Replies.Add(new ReplyComment(this, author, content, DateTime.UtcNow));

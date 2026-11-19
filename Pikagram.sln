@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pikogram", "Pikogram\Pikogram.csproj", "{5109B080-1B5D-42A5-8114-63AE4736A478}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pikagram", "Pikagram\Pikagram.csproj", "{5109B080-1B5D-42A5-8114-63AE4736A478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
