@@ -1,50 +1,65 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Pikogram</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Pikogram.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pikogram</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<body class="body">
+<!--
+Z Reactu a Astra jsem zvyklý dělat si komponentky a skládat je do sebe. Tady to tak jednoduše nejde tak to nechám v layoutu 
+Připadám si jak kdybych programoval v pravěku, ani Hot reload půlku času nefunguje a každej novej partial požaduje restart
+Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to nice)
+-->
+<header class="header">
+    <a asp-controller="Home" asp-action="Index">
+        <img src="assets/logo.png" alt="Pikogram" class="header__logo"/>
+    </a>
+</header>
+<main class="main">
+    <nav class="nav">
+        <a asp-controller="Home" asp-action="Index">Domů</a>
+        <a asp-controller="Search" asp-action="Index">Hledat</a>
+        <a asp-controller="Privacy" asp-action="Index">Privacy</a>
+    </nav>
+    @RenderBody()
+</main>
+<footer class="footer">
+    Pikogram 2026 - Nejpoužívanější Instagram klon v Přerově a Ústeckém kraji
+</footer>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+<!-- Vyvíjet se styly v samostatném souboru je neskutečná bolest a některý třídy se mi ani neaplikujou. Má to minimum výhod, takže to budu dělat takhle -->
+<style>
+    .body {
+        
+    }
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Pikogram - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    .header {
+        height: var(--header-height);
+    }
+
+    .header__logo {
+        width: 200px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    }
+
+    .footer {
+        height: var(--footer-height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
 </body>
 </html>
