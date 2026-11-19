@@ -6,18 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Footer.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/assets/icons/home.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/assets/icons/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/Comments/AbstractComment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/Comments/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/Comments/Like.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/Comments/ReplyComment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/Posts/Post.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikogram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Pikogram.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Pikogram.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Privacy/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Privacy/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Search/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Search/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +47,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6e5addf2eedd4df5947f5d70e94e221935e00/e8/f73c60dc/RazorPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Controllers/PrivacyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Comment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Comments/AbstractComment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Comments/Like.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Comments/Reply.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Post.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Posts/Mention.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Models/Profile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Footer.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -149,7 +151,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="cleanup a první styly" />
     <MESSAGE value="favicon, title" />
-    <option name="LAST_COMMIT_MESSAGE" value="favicon, title" />
+    <MESSAGE value="už to vypadá malinko líp" />
+    <option name="LAST_COMMIT_MESSAGE" value="už to vypadá malinko líp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
