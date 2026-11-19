@@ -1,7 +1,12 @@
 /* <html> tag */
 :root {
   --header-height: 60px;
-  --footer-height: 60px; 
+  --footer-height: 60px;
+}
+
+* {
+  /* height se počítá od border -> padding */
+  box-sizing: border-box;
 }
 
 body {

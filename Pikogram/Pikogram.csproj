@@ -74,8 +74,6 @@
     <Folder Include="Views\Create\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Register\" />
-    <Folder Include="Views\Shared\Components\" />
-    <Folder Include="Views\Shared\Compositions\" />
   </ItemGroup>
 
 </Project>

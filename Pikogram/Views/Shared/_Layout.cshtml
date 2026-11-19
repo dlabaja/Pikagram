@@ -19,62 +19,40 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body class="body">
+
 <!--
 Z Reactu a Astra jsem zvyklý dělat si komponentky a skládat je do sebe. Tady to tak jednoduše nejde, tak to nechám v layoutu 
 Připadám si, jak kdybych programoval v pravěku, ani Hot reload půlku času nefunguje a každej novej partial vyžaduje restart
 Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to nice)
 -->
-<header class="header">
-    <a asp-controller="Home" asp-action="Index">
-        <img src="assets/logo.png" alt="Pikogram" class="header__logo"/>
-    </a>
-</header>
-<main class="main">
-    <nav class="nav">
-        <a asp-controller="Home" asp-action="Index">Domů</a>
-        <a asp-controller="Search" asp-action="Index">Hledat</a>
-        <a asp-controller="Privacy" asp-action="Index">Privacy</a>
-    </nav>
-    @RenderBody()
-</main>
-<footer class="footer">
-    Pikagram 2026 - Nejpoužívanější Instagram klon v Přerově a Ústeckém kraji
-</footer>
+
+<body class="layout__body">
+<partial name="Components/_Header"/>
+<div class="layout__container">
+    <partial name="Components/_Nav"/>
+    <main class="layout__main">
+        @RenderBody()
+    </main>
+</div>
+<partial name="Components/_Footer"/>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
+
 <!-- 
 Vyvíjet se styly v samostatným souboru je neskutečná bolest a některý třídy se mi ani neaplikujou. 
-Má to minimum výhod, takže to budu dělat takhle 
+Má to minimum výhod, takže to budu dělat takhle:
 -->
 <style>
-    .body {
-        
+    .layout__body {
+        padding: 0 8px;
     }
-
-    .header {
-        height: var(--header-height);
-    }
-
-    .header__logo {
-        width: 200px;
-    }
-
-    .nav {
+    
+    .layout__container {
         display: flex;
-        flex-direction: column;
     }
-
-    .main {
+    
+    .layout__main {
         min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    }
-
-    .footer {
-        height: var(--footer-height);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
     }
 </style>
 </body>

@@ -6,17 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Footer.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/assets/icons/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikogram/wwwroot/assets/icons/search.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikogram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram/Pikogram.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Pikogram.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Privacy/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Privacy/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Search/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Search/Index.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikogram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/wwwroot/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/wwwroot/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikogram/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikogram/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +37,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "dlabaja"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/dlabaja/Pikogram.git",
+    "accountId": "e349229d-8748-4103-9a7c-29095fb0082f"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6e5addf2eedd4df5947f5d70e94e221935e00/e8/f73c60dc/RazorPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Controllers/PrivacyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Search/Search.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Footer.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Header.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Header.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Main.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Nav.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Compositions/_Nav.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikogram/Views/Shared/Header.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -133,7 +148,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="cleanup a první styly" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup a první styly" />
+    <MESSAGE value="favicon, title" />
+    <option name="LAST_COMMIT_MESSAGE" value="favicon, title" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

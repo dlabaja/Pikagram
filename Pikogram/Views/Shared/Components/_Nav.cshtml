@@ -1,0 +1,27 @@
+<nav class="nav">
+    @{
+        var list = new List<(string controller, string action, string icon)>
+        {
+            ("Home", "Index", "home.svg"),
+            ("Search", "Index", "search.svg"),
+            ("Privacy", "Index", "home.svg"),
+        };
+    }
+    @foreach(var item in list)
+    {
+        <a asp-controller=@item.controller asp-action=@item.action>
+            <img src=@($"assets/icons/{item.icon}") alt="nav icon" class="nav__img"/>
+        </a>
+    }
+</nav>
+<style>
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .nav__img {
+        height: 32px;
+    }
+</style>
