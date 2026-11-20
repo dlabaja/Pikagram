@@ -46,7 +46,7 @@ public class AppDbContext : IdentityDbContext
 
         builder.Entity<Like>(entity =>
         {
-            entity.HasKey(x => new { x.UserId, x.LikedId });
+            entity.HasKey(x => new { x.UserId, x.LikedId, x.LikedType });
             // Like <-> User
             // Like ukazuje na 1 Usera, User ukazuje na N liků -> 1:N 
             entity.HasOne(x => x.User)

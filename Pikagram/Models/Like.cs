@@ -12,4 +12,11 @@ public class Like
     public Like()
     {
     }
+
+    public Like(Guid userId, Guid likedId, LikedType likedType)
+    {
+        UserId = userId;
+        LikedId = likedId;
+        LikedType = likedType;
+    }
 }

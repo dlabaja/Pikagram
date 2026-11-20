@@ -5,9 +5,9 @@ namespace Pikagram.Models;
 public class Comment
 {
     public Guid Id { get; } = Guid.CreateVersion7(); // obsahuje čas
-    [MaxLength(250)]
     public Guid AuthorId { get; }
     public Guid? ParentId { get; }
+    [MaxLength(250)]
     public string Content { get; private set; } = "";
     public DateTime DatePublished { get; } = DateTime.UtcNow; // nebude bordel v časových zónách
     public bool IsEdited { get; private set; }
@@ -19,12 +19,12 @@ public class Comment
     {
     }
 
-    public Comment(User author, string content, DateTime datePublished, Comment? parent)
+    public Comment(Guid authorId, string content, DateTime datePublished, Guid? parentId)
     {
-        Author = author;
+        AuthorId = authorId;
         Content = content;
         DatePublished = datePublished;
-        Parent = parent;
+        ParentId = parentId;
     }
 
     public void Edit(string newContent)
