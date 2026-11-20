@@ -2,7 +2,7 @@ using Pikogram;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddRouting(options =>
 {
