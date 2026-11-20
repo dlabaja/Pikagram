@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Pikagram.Models;
+using Pikagram.Views.Shared;
 
 namespace Pikagram.Controllers;
 
