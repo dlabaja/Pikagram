@@ -4,13 +4,13 @@
     ViewData["Title"] = "Přihlášení";
 }
 
-@* pošle se page modelu, ten to verifikuje a pošle na api? *@
+@* pošle se page modelu, ten to verifikuje a upraví v userManageru *@
 <form method="post">
     <div asp-validation-summary="ModelOnly"></div>
     
-    <label asp-for="Input.Email">Email</label>
-    <input type="email" asp-for="Input.Email" required/>
-    <span asp-validation-for="Input.Email"></span>
+    <label asp-for="Input.Username">Přezdívka</label>
+    <input type="text" asp-for="Input.Username" required/>
+    <span asp-validation-for="Input.Username"></span>
 
     <label asp-for="Input.Password">Heslo</label>
     <input type="password" asp-for="Input.Password" required/>
@@ -18,3 +18,4 @@
 
     <input type="submit" value="Přihlásit se">
 </form>
+<p>Nemáš ještě účet? Tak se <a asp-controller="Account" asp-action="Register">zaregistruj!</a></p>
