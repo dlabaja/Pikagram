@@ -1,4 +1,4 @@
-using Pikogram;
+using Pikagram;
 
 var builder = WebApplication.CreateBuilder(args);
 

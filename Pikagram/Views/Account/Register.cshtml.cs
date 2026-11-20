@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Pikogram.Views.Account;
+namespace Pikagram.Views.Account;
 
 public class RegisterModel : PageModel
 {

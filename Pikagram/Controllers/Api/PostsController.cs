@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Pikogram.Models;
-using Pikogram.Models.Comments;
+using Pikagram.Models;
+using Pikagram.Models.Comments;
 
-namespace Pikogram.Controllers.Api;
+namespace Pikagram.Controllers.Api;
 
 [ApiController]
 [Route("api/posts")]

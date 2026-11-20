@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Pikogram.Controllers.Api;
+namespace Pikagram.Controllers.Api;
 
 [ApiController]
 [Route("api/account")]

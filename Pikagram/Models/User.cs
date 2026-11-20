@@ -1,6 +1,6 @@
-using Pikogram.Models.Comments;
+using Pikagram.Models.Comments;
 
-namespace Pikogram.Models;
+namespace Pikagram.Models;
 
 public class User
 {

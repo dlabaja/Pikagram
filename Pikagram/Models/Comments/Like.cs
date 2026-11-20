@@ -1,6 +1,6 @@
-using Pikogram.Enums;
+using Pikagram.Enums;
 
-namespace Pikogram.Models.Comments;
+namespace Pikagram.Models.Comments;
 
 public class Like
 {

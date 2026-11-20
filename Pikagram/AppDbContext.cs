@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Pikogram.Models;
-using Pikogram.Models.Comments;
-using Pikogram.Models.Posts;
+using Pikagram.Models;
+using Pikagram.Models.Comments;
+using Pikagram.Models.Posts;
 
-namespace Pikogram;
+namespace Pikagram;
 
 public class AppDbContext : DbContext
 {

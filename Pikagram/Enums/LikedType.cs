@@ -1,4 +1,4 @@
-namespace Pikogram.Enums;
+namespace Pikagram.Enums;
 
 public enum LikedType
 {

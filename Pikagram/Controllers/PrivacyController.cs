@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Pikogram.Controllers;
+namespace Pikagram.Controllers;
 
 public class PrivacyController : Controller
 {

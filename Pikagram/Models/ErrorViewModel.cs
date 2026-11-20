@@ -1,4 +1,4 @@
-namespace Pikogram.Models;
+namespace Pikagram.Models;
 
 public class ErrorViewModel
 {

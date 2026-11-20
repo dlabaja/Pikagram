@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Pikogram.Models;
+using Pikagram.Models;
 
-namespace Pikogram.Controllers;
+namespace Pikagram.Controllers;
 
 public class HomeController : Controller
 {

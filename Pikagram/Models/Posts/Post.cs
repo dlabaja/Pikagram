@@ -1,6 +1,6 @@
-using Pikogram.Models.Comments;
+using Pikagram.Models.Comments;
 
-namespace Pikogram.Models.Posts;
+namespace Pikagram.Models.Posts;
 
 public class Post
 {

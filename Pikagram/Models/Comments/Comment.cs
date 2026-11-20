@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pikogram.Models.Comments;
+namespace Pikagram.Models.Comments;
 
 public class Comment
 {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Pikogram.Views.Search;
+namespace Pikagram.Views.Search;
 
 public class Index : PageModel
 {
