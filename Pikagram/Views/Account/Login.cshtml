@@ -1,0 +1,20 @@
+@* validace přes PageModel *@
+@model Pikogram.Views.Account.LoginModel
+@{
+    ViewData["Title"] = "Přihlášení";
+}
+
+@* pošle se page modelu, ten to verifikuje a pošle na api? *@
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    
+    <label asp-for="Input.Email">Email</label>
+    <input type="email" asp-for="Input.Email" required/>
+    <span asp-validation-for="Input.Email"></span>
+
+    <label asp-for="Input.Password">Heslo</label>
+    <input type="password" asp-for="Input.Password" required/>
+    <span asp-validation-for="Input.Password"></span>
+
+    <input type="submit" value="Přihlásit se">
+</form>
