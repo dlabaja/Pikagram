@@ -1,15 +1,19 @@
-using Pikagram.Models.Comments;
+using Microsoft.AspNetCore.Identity;
 
 namespace Pikagram.Models;
 
-public class User
+public class User : IdentityUser
 {
-    public Guid Id { get; } = Guid.CreateVersion7();
-    public string Username { get; }
-    public List<Like> Likes { get; } = [];
+    public string Bio { get; } = string.Empty;
+    public string ProfilePictureSrc { get; } = string.Empty;
+    public string BackgroundSrc { get; } = string.Empty;
+    public virtual List<Like> Likes { get; } = [];
+    public virtual List<Post> Posts { get; } = [];
+    public virtual List<Follower> Followers { get; } = [];
+    public virtual List<Follower> Following { get; } = [];
+    public virtual List<Comment> Comments { get; } = [];
 
-    public User(string username)
+    public User()
     {
-        Username = username;
     }
 }
