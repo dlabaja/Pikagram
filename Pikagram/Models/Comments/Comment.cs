@@ -1,19 +1,33 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Pikogram.Models.Comments;
 
-public class Comment : AbstractComment
+public class Comment
 {
-    public virtual List<ReplyComment> Replies { get; } = [];
+    public Guid Id { get; } = Guid.CreateVersion7(); // obsahuje čas
+    [MaxLength(250)]
+    public string Content { get; private set; } = "";
+    public DateTime DatePublished { get; } = DateTime.UtcNow; // nebude bordel v časových zónách
+    public bool IsEdited { get; private set; } = false;
+    public virtual User Author { get; } = null;
+    public virtual Comment? Parent { get; } = null;
+    public virtual List<Like> Likes { get; } = [];
 
     public Comment()
     {
     }
 
-    public Comment(User author, string content, DateTime datePublished) : base(author, content, datePublished)
+    public Comment(User author, string content, DateTime datePublished, Comment? parent)
     {
+        Author = author;
+        Content = content;
+        DatePublished = datePublished;
+        Parent = parent;
     }
 
-    public void Reply(User author, string content)
+    public void Edit(string newContent)
     {
-        Replies.Add(new ReplyComment(this, author, content, DateTime.UtcNow));
+        Content = newContent;
+        IsEdited = true;
     }
 }

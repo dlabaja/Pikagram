@@ -1,13 +1,17 @@
+using Pikogram.Enums;
+
 namespace Pikogram.Models.Comments;
 
 public class Like
 {
     public Guid UserId { get; }
-    public Guid CommentId { get; }
+    public Guid LikedId { get; }
+    public LikedType LikedType { get; }
 
-    public Like(Guid userId, Guid commentId)
+    public Like(Guid userId, Guid commentId, LikedType likedType)
     {
         UserId = userId;
-        CommentId = commentId;
+        LikedId = commentId;
+        LikedType = likedType;
     }
 }
