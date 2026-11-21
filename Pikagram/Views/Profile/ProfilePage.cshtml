@@ -1,0 +1,48 @@
+<div class="profile__container">
+    <img src="@ViewBag.User.BackgroundSrc" class="profile__background"/>
+    <div class="profile__lower">
+        <img src="@ViewBag.User.AvatarSrc" class="profile__avatar"/>
+        <div class="profile__gap"></div>
+        <div class="profile__name">
+            <h1>@ViewBag.User.FirstName @ViewBag.User.LastName</h1>
+            <h2>@ViewBag.User.UserName</h2>
+        </div>
+    </div>
+    <span>@ViewBag.User.Bio</span>
+</div>
+<style>
+    .profile__container {
+    }
+
+    .profile__background {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border: 1px solid black;
+        border-radius: 8px;
+    }
+
+    .profile__avatar {
+        border: 1px solid black;
+        border-radius: 50%;
+        object-fit: cover;
+        max-width: 200px;
+        position: absolute;
+        top: -50px;
+    }
+
+    .profile__name {
+
+    }
+
+    .profile__gap {
+        width: 230px;
+    }
+
+    .profile__lower {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        margin: auto;
+    }
+</style>
