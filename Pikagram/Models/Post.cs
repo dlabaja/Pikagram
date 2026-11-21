@@ -5,8 +5,8 @@ namespace Pikagram.Models;
 
 public class Post
 {
-    public Guid Id { get; } = Guid.CreateVersion7();
-    public Guid AuthorId { get; }
+    public Guid Id { get; private set; } = Guid.CreateVersion7();
+    public Guid AuthorId { get; private set; }
     [MaxLength(250)]
     public string Text { get; private set; } = string.Empty;
     [MaxLength(250)]
@@ -14,9 +14,9 @@ public class Post
     [MaxLength(250)]
     public string MediaSrc { get; private set; } = string.Empty;
     public MediaType MediaType { get; private set; }
-    public virtual User Author { get; }
-    public virtual List<Comment> Comments { get; } = [];
-    public virtual List<Like> Likes { get; } = [];
+    public virtual User Author { get; private set; }
+    public virtual List<Comment> Comments { get; private set; } = [];
+    public virtual List<Like> Likes { get; private set; } = [];
 
     public Post()
     {

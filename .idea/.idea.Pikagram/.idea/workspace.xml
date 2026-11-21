@@ -10,6 +10,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Like.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Like.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6e5addf2eedd4df5947f5d70e94e221935e00/e8/f73c60dc/RazorPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725fa933cfe6416b96a37fff74bf7e7611800/08/0512aaa3/ConfigurationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Attributes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/Api/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -64,9 +71,6 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikogram/Pikagram/Models/Comment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikogram/Pikagram/Models/Post.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikogram/Pikagram/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -96,7 +100,7 @@
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6147541&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dlabaja/RiderProjects/Pikogram&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dlabaja/RiderProjects/Pikagram&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
@@ -151,6 +155,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
@@ -168,7 +183,8 @@
     <MESSAGE value="media service" />
     <MESSAGE value="úprava modelů podle zadání" />
     <MESSAGE value="dokončování api" />
-    <option name="LAST_COMMIT_MESSAGE" value="dokončování api" />
+    <MESSAGE value="solution rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="solution rename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

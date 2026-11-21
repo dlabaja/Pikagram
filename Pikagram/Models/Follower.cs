@@ -2,8 +2,9 @@ namespace Pikagram.Models;
 
 public class Follower
 {
-    public Guid FollowerId { get; }
-    public Guid FollowingId { get; }
-    public virtual User FollowerUser { get; }
-    public virtual User FollowingUser { get; }
+    // pk je (FollowerId, FollowingId)
+    public Guid FollowerId { get; private set; }
+    public Guid FollowingId { get; private set; }
+    public virtual User FollowerUser { get; private set; }
+    public virtual User FollowingUser { get; private set; }
 }

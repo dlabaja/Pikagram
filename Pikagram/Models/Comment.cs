@@ -4,16 +4,16 @@ namespace Pikagram.Models;
 
 public class Comment
 {
-    public Guid Id { get; } = Guid.CreateVersion7(); // obsahuje čas
-    public Guid AuthorId { get; }
-    public Guid? ParentId { get; }
-    [MaxLength(250)]
+    public Guid Id { get; private set; } = Guid.CreateVersion7(); // obsahuje čas
+    public Guid AuthorId { get; private set; }
+    public Guid? ParentId { get; private set; }
+    [MaxLength(250)] 
     public string Text { get; private set; } = string.Empty;
-    public DateTime DatePublished { get; } = DateTime.UtcNow; // nebude bordel v časových zónách
+    public DateTime DatePublished { get; private set; } = DateTime.UtcNow; // nebude bordel v časových zónách
     public bool IsEdited { get; private set; }
-    public virtual User Author { get; }
-    public virtual Comment? Parent { get; }
-    public virtual List<Like> Likes { get; } = [];
+    public virtual User Author { get; private set; }
+    public virtual Comment? Parent { get; private set; }
+    public virtual List<Like> Likes { get; private set; } = [];
 
     public Comment()
     {

@@ -4,10 +4,10 @@ namespace Pikagram.Models;
 
 public class Like
 {
-    public Guid UserId { get; }
-    public Guid LikedId { get; }
-    public LikedType LikedType { get; }
-    public virtual User User { get; }
+    public Guid UserId { get; private set; }
+    public Guid LikedId { get; private set; }
+    public LikedType LikedType { get; private set; }
+    public virtual User User { get; private set; }
 
     public Like()
     {

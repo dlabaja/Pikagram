@@ -9,21 +9,21 @@ public class User : IdentityUser<Guid>
     private static readonly string _defaultBackgroundSrc = "/media/backgrounds/default-background.webp";
     
     [MaxLength(50)]
-    public string FirstName { get; set; }  = string.Empty;
+    public string FirstName { get; init; }  = string.Empty;
     [MaxLength(50)]
-    public string LastName { get; set; }  = string.Empty;
-    public DateTime DateBorn { get; set; }
+    public string LastName { get; init; }  = string.Empty;
+    public DateTime DateBorn { get; init; }
     [MaxLength(250)]
     public string Bio { get; private set; } = string.Empty;
     [MaxLength(250)]
     public string AvatarSrc { get; private set; } = _defaultAvatarSrc;
     [MaxLength(250)]
     public string BackgroundSrc { get; private set; } = _defaultBackgroundSrc;
-    public virtual List<Like> Likes { get; } = [];
-    public virtual List<Post> Posts { get; } = [];
-    public virtual List<Follower> Followers { get; } = [];
-    public virtual List<Follower> Following { get; } = [];
-    public virtual List<Comment> Comments { get; } = [];
+    public virtual List<Like> Likes { get; private set; } = [];
+    public virtual List<Post> Posts { get; private set; } = [];
+    public virtual List<Follower> Followers { get; private set; } = [];
+    public virtual List<Follower> Following { get; private set; } = [];
+    public virtual List<Comment> Comments { get; private set; } = [];
 
     public User()
     {

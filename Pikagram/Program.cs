@@ -18,7 +18,7 @@ builder.Services.AddRouting(options =>
     options.LowercaseUrls = true; // url s uppercasem je odporný
 });
 
-builder.Services.AddIdentity<User, IdentityRole>(options => { options.Password.RequiredLength = 8; })
+builder.Services.AddIdentity<User, IdentityRole<Guid>>(options => { options.Password.RequiredLength = 8; })
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 

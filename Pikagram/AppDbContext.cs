@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Pikagram.Models;
@@ -11,12 +12,11 @@ namespace Pikagram;
 // M:N -> mnoho záznamů ukazuje na více jiných záznamů, too complicated
 //        User <-> User, každý User má M sledujících a každý User N lidí sleduje
 
-public class AppDbContext : IdentityDbContext
+public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
     // bez inicializace by tam zůstal null (v tomhle je EpickyORM blbuvzdornější)
     public DbSet<Post> Posts => Set<Post>();
     public DbSet<Comment> Comments => Set<Comment>();
-    public DbSet<User> Users => Set<User>();
     public DbSet<Like> Likes => Set<Like>();
     public DbSet<Follower> Followers => Set<Follower>();
     public DbSet<Message> Messages => Set<Message>();
@@ -29,7 +29,7 @@ public class AppDbContext : IdentityDbContext
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        base.OnModelCreating(builder);
+        base.OnModelCreating(builder); // identity vazby
 
         builder.Entity<Follower>(entity =>
         {
@@ -39,10 +39,10 @@ public class AppDbContext : IdentityDbContext
             // Follower ukazuje na 1 Usera (HasOne)
             // User ukazuje na N Followerů -> 1:N (WithMany)
             entity.HasOne(x => x.FollowerUser)
-                .WithMany()
+                .WithMany(x => x.Following)
                 .HasForeignKey(x => x.FollowerId); // nastavuje klíč pro vazbu
             entity.HasOne(x => x.FollowingUser)
-                .WithMany()
+                .WithMany(x => x.Followers)
                 .HasForeignKey(x => x.FollowingId);
         });
 
@@ -52,20 +52,15 @@ public class AppDbContext : IdentityDbContext
             // Like <-> User
             // Like ukazuje na 1 Usera, User ukazuje na N liků -> 1:N 
             entity.HasOne(x => x.User)
-                .WithMany()
+                .WithMany(x => x.Likes)
                 .HasForeignKey(x => x.UserId);
         });
 
         builder.Entity<Post>(entity =>
         {
             entity.HasOne(x => x.Author)
-                .WithMany()
+                .WithMany(x => x.Posts)
                 .HasForeignKey(x => x.AuthorId);
-            // Příspěvek <-> Komentář
-            // Příspěvek ukazuje na N komentářů, Komentář na 1 příspěvek
-            // fk se vytvoří automaticky
-            entity.HasMany(x => x.Comments)
-                .WithOne();
             entity.HasMany(x => x.Likes)
                 .WithOne()
                 .HasForeignKey(x => x.LikedId);
@@ -83,28 +78,7 @@ public class AppDbContext : IdentityDbContext
                 .WithOne()
                 .HasForeignKey(x => x.LikedId);
         });
-
-        builder.Entity<User>(entity =>
-        {
-            entity.HasMany(x => x.Likes)
-                .WithOne()
-                .HasForeignKey(x => x.UserId);
-            entity.HasMany(x => x.Posts)
-                .WithOne()
-                .HasForeignKey(x => x.AuthorId);
-            // User <-> Follower
-            // User má N followerů, Follower patří k 1 Userovi?
-            entity.HasMany(x => x.Followers)
-                .WithOne()
-                .HasForeignKey(x => x.FollowerId);
-            entity.HasMany(x => x.Following)
-                .WithOne()
-                .HasForeignKey(x => x.FollowingId);
-            entity.HasMany(x => x.Comments)
-                .WithOne()
-                .HasForeignKey(x => x.AuthorId);
-        });
-
+        
         builder.Entity<Message>(entity =>
         {
             // Message <-> User
@@ -116,5 +90,7 @@ public class AppDbContext : IdentityDbContext
                 .WithMany()
                 .HasForeignKey(x => x.ReceiverId);
         });
+        
+        // user už porpojuju z druhé strany, nemusím ho definovat
     }
 }
