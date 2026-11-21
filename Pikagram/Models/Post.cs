@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Pikagram.Enums;
 
 namespace Pikagram.Models;
@@ -6,7 +7,11 @@ public class Post
 {
     public Guid Id { get; } = Guid.CreateVersion7();
     public Guid AuthorId { get; }
-    public string Description { get; private set; } = string.Empty;
+    [MaxLength(250)]
+    public string Text { get; private set; } = string.Empty;
+    [MaxLength(250)]
+    public string Tags { get; private set; } = string.Empty;
+    [MaxLength(250)]
     public string MediaSrc { get; private set; } = string.Empty;
     public MediaType MediaType { get; private set; }
     public virtual User Author { get; }
@@ -17,17 +22,17 @@ public class Post
     {
     }
 
-    public Post(Guid authorId, string description, string mediaSrc, MediaType mediaType)
+    public Post(Guid authorId, string text, string mediaSrc, MediaType mediaType)
     {
         AuthorId = authorId;
-        Description = description;
+        Text = text;
         MediaSrc = mediaSrc;
         MediaType = mediaType;
     }
 
     public void ChangeDescription(string description)
     {
-        Description = description;
+        Text = description;
     }
 
     public void ChangeSrc(string mediaSrc, MediaType mediaType)

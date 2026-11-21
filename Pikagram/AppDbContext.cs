@@ -19,6 +19,8 @@ public class AppDbContext : IdentityDbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Like> Likes => Set<Like>();
     public DbSet<Follower> Followers => Set<Follower>();
+    public DbSet<Message> Messages => Set<Message>();
+
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -99,6 +101,18 @@ public class AppDbContext : IdentityDbContext
             entity.HasMany(x => x.Comments)
                 .WithOne()
                 .HasForeignKey(x => x.AuthorId);
+        });
+
+        builder.Entity<Message>(entity =>
+        {
+            // Message <-> User
+            // Zpráva má 1 Usera, Usera má N zpráv
+            entity.HasOne(x => x.Sender)
+                .WithMany()
+                .HasForeignKey(x => x.SenderId);
+            entity.HasOne(x => x.Receiver)
+                .WithMany()
+                .HasForeignKey(x => x.ReceiverId);
         });
     }
 }
