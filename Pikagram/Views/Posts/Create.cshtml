@@ -1,0 +1,16 @@
+@* validace přes PageModel *@
+@model Pikagram.ViewModels.CreatePostViewModel
+@{
+    ViewData["Title"] = "Nahraj příspěvek";
+}
+
+<h1>Nahraj příspěvek</h1>
+<form method="post" enctype="multipart/form-data" class="form">
+    <input type="text" asp-for="Text" placeholder="Popisek" required/>
+    <input type="text" asp-for="Tags" placeholder="Tagy (odděl čárkou)"/>
+    <input type="file" asp-for="Media" placeholder="Příspěvek (obrázek/video)" required/>
+
+    <input type="submit" value="Nahrát">
+</form>
+<div asp-validation-summary="All"></div>
+

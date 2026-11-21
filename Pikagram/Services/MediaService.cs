@@ -18,6 +18,7 @@ public class MediaService
     {
         var stream = file.OpenReadStream();
         var fileType = await FileTypeChecker.FileTypeValidator.GetFileTypeAsync(stream);
+        stream.Position = 0;
         if (_imgFormats.Contains(fileType.Name.ToLower()))
         {
             return await SaveImage(stream, mediaFolderName, name);
@@ -25,7 +26,7 @@ public class MediaService
 
         if (_videoFormats.Contains(fileType.Name.ToLower()))
         {
-            return await SaveVideo(stream, name, mediaFolderName, fileType.Name.ToLower());
+            return await SaveVideo(stream, mediaFolderName, name, fileType.Name.ToLower());
         }
 
         return null;
@@ -39,7 +40,7 @@ public class MediaService
 
     private async Task<(string relpath, MediaType type)?> SaveImage(Stream stream, string mediaFolderName, string name)
     {
-        var relPath = Path.Combine(mediaFolderName, $"{name}.webp");
+        var relPath = Path.Combine("media", mediaFolderName, $"{name}.webp");
         var path = Path.Combine(_environment.WebRootPath, relPath);
         using var image = await Image.LoadAsync(stream);
         await image.SaveAsWebpAsync(path);
@@ -49,7 +50,7 @@ public class MediaService
     private async Task<(string relpath, MediaType type)?> SaveVideo(Stream stream, string mediaFolderName, string name, string extension)
     {
         // nechce se mi nic konvertovat, prostě to uložím (jinak bych byl závislej na ffmpeg, možná jindy)
-        var relPath = Path.Combine( mediaFolderName, $"{name}.{extension}");
+        var relPath = Path.Combine("media", mediaFolderName, $"{name}.{extension}");
         var path = Path.Combine(_environment.WebRootPath, relPath);
         await using var fileStream = new FileStream(path, FileMode.Create);
         await stream.CopyToAsync(fileStream);

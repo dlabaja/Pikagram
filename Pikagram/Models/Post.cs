@@ -22,10 +22,11 @@ public class Post
     {
     }
 
-    public Post(Guid authorId, string text, string mediaSrc, MediaType mediaType)
+    public Post(Guid authorId, string text, string tags, string mediaSrc, MediaType mediaType)
     {
         AuthorId = authorId;
         Text = text;
+        Tags = tags;
         MediaSrc = mediaSrc;
         MediaType = mediaType;
     }
