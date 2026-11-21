@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Pikagram.Attributes;
 using Pikagram.Models;
 
 namespace Pikagram.Views.Account;
@@ -41,10 +40,6 @@ public class RegisterModel : PageModel
         [StringLength(30, MinimumLength = 3, ErrorMessage = "Přezdívka musí mít 3 až 30 znaků.")]
         public string Username { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Datum narození je povinné (1. ledna 2000 to jistí).")]
-        [ValidateDateBorn(ErrorMessage = "Datum musí být v současnosti (diskriminace všech co se ještě nenarodili)")]
-        public DateTime DateBorn { get; set; } = DateTime.UtcNow;
-
         [Required(ErrorMessage = "Heslo je povinné.")]
         [MinLength(8, ErrorMessage = "Heslo musí mít alespoň 8 znaků.")]
         public string Password { get; set; } = string.Empty;
@@ -63,9 +58,11 @@ public class RegisterModel : PageModel
         public bool AnanasChecked { get; set; }
     }
     
-    public async Task<IActionResult> OnPostAsync(string? returnUrl = null)
+    public async Task<IActionResult> OnPostAsync()
     {
-        if (!ModelState.IsValid)
+        Console.WriteLine("hýr");
+        return Page();
+        /*if (!ModelState.IsValid)
         {
             return Page();
         }
@@ -76,18 +73,17 @@ public class RegisterModel : PageModel
             LastName = Input.LastName,
             Email = Input.Email,
             UserName = Input.Username,
-            DateBorn = Input.DateBorn
         };
-        
+
         var result = await _userManager.CreateAsync(user, Input.Password);
-        
+
         if (!result.Succeeded)
         {
             ModelState.AddModelError(string.Empty, "Registrace selhala, asi nemáte rádi ananas na pizze ;(");
             return Page();
         }
-        
+
         await _signInManager.SignInAsync(user, true);
-        return RedirectToPage("/");
+        return RedirectToPage("/");*/
     }
 }

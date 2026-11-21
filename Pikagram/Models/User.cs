@@ -12,7 +12,6 @@ public class User : IdentityUser<Guid>
     public string FirstName { get; init; }  = string.Empty;
     [MaxLength(50)]
     public string LastName { get; init; }  = string.Empty;
-    public DateTime DateBorn { get; init; }
     [MaxLength(250)]
     public string Bio { get; private set; } = string.Empty;
     [MaxLength(250)]

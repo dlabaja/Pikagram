@@ -1,16 +1,35 @@
 <header class="header">
     <a asp-controller="Home" asp-action="Index">
-        <img src="assets/logo.png" alt="Pikagram" class="header__logo"/>
+        <img src="/assets/logo.png" alt="Pikagram" class="header__logo"/>
     </a>
+    <nav class="header__nav">
+        @if (User.Identity?.IsAuthenticated == false)
+        {
+            <a asp-controller="Account" asp-action="Register">Zaregistrovat se</a>
+            <a asp-controller="Account" asp-action="Login">Přihlásit se</a>
+        }
+        else
+        {
+            <a asp-controller="Account" asp-action="Logout">Odhlásit se</a>
+        }
+    </nav>
 </header>
 
 <style>
     .header {
         height: var(--header-height);
         padding: 8px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .header__logo {
         height: 100%;
+    }
+    
+    .header__nav {
+        display: flex;
+        gap: 16px;
+        align-items: center;
     }
 </style>

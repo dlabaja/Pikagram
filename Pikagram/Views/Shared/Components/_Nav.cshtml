@@ -4,13 +4,12 @@
         {
             ("Home", "Index", "home.svg"),
             ("Search", "Index", "search.svg"),
-            ("Privacy", "Index", "home.svg"),
         };
     }
     @foreach(var item in list)
     {
         <a asp-controller=@item.controller asp-action=@item.action>
-            <img src=@($"assets/icons/{item.icon}") alt="nav icon" class="nav__img"/>
+            <img src=@($"/assets/icons/{item.icon}") alt="nav icon" class="nav__img"/>
         </a>
     }
 </nav>

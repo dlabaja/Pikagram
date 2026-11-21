@@ -10,19 +10,29 @@
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Like.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Like.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Footer.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="25fdd759-9f7f-4d0b-a033-24950a0aa435" value="" />
+    </colors>
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
@@ -71,6 +81,7 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -88,24 +99,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Pikogram: http.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.6147541&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dlabaja/RiderProjects/Pikagram&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Pikogram: http.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "XThreadsFramesViewSplitterKey": "0.6147541",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "/home/dlabaja/RiderProjects/Pikagram",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Pikogram: http">
     <configuration name="Pikogram: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Pikagram/Pikagram.csproj" />
@@ -184,7 +200,8 @@
     <MESSAGE value="úprava modelů podle zadání" />
     <MESSAGE value="dokončování api" />
     <MESSAGE value="solution rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="solution rename" />
+    <MESSAGE value="první migrace" />
+    <option name="LAST_COMMIT_MESSAGE" value="první migrace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

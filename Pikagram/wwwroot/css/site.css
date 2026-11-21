@@ -12,3 +12,28 @@
 body {
   margin: 0;
 }
+
+input {
+  height: 40px;
+  padding: 8px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  height: unset;
+  padding: unset;
+  width: unset;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
