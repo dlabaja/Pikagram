@@ -2,15 +2,17 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Pikagram.Attributes;
+using Pikagram.Models;
 
 namespace Pikagram.Views.Account;
 
 public class RegisterModel : PageModel
 {
-    private readonly SignInManager<IdentityUser> _signInManager;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly SignInManager<User> _signInManager;
+    private readonly UserManager<User> _userManager;
 
-    public RegisterModel(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+    public RegisterModel(SignInManager<User> signInManager, UserManager<User> userManager)
     {
         _signInManager = signInManager;
         _userManager = userManager;
@@ -23,6 +25,14 @@ public class RegisterModel : PageModel
     // model pro formulář
     public class InputModel
     {
+        [Required(ErrorMessage = "Jméno je povinné (Ale můžeš si ho vymyslet).")]
+        [StringLength(50, ErrorMessage = "Jméno může mít maximálně 50 znaků.")]
+        public string FirstName { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Příjmení je povinné (Ale můžeš si ho vymyslet).")]
+        [StringLength(50, ErrorMessage = "Příjmení může mít maximálně 50 znaků.")]
+        public string LastName { get; set; } = string.Empty;
+        
         [Required(ErrorMessage = "Email je povinný.")]
         [EmailAddress(ErrorMessage = "Zadej platný email.")]
         public string Email { get; set; } = string.Empty;
@@ -30,6 +40,10 @@ public class RegisterModel : PageModel
         [Required(ErrorMessage = "Přezdívka je povinná.")]
         [StringLength(30, MinimumLength = 3, ErrorMessage = "Přezdívka musí mít 3 až 30 znaků.")]
         public string Username { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Datum narození je povinné (1. ledna 2000 to jistí).")]
+        [ValidateDateBorn(ErrorMessage = "Datum musí být v současnosti (diskriminace všech co se ještě nenarodili)")]
+        public DateTime DateBorn { get; set; } = DateTime.UtcNow;
 
         [Required(ErrorMessage = "Heslo je povinné.")]
         [MinLength(8, ErrorMessage = "Heslo musí mít alespoň 8 znaků.")]
@@ -56,10 +70,13 @@ public class RegisterModel : PageModel
             return Page();
         }
 
-        var user = new IdentityUser
+        var user = new User
         {
+            FirstName = Input.FirstName,
+            LastName = Input.LastName,
             Email = Input.Email,
-            UserName = Input.Username
+            UserName = Input.Username,
+            DateBorn = Input.DateBorn
         };
         
         var result = await _userManager.CreateAsync(user, Input.Password);

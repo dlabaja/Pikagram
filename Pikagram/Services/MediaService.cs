@@ -14,7 +14,7 @@ public class MediaService
         _environment = environment;
     }
     
-    public async Task<(string path, MediaType type)?> SaveMedia(IFormFile file, string mediaFolderName, string name)
+    public async Task<(string relpath, MediaType type)?> SaveMedia(IFormFile file, string mediaFolderName, string name)
     {
         var stream = file.OpenReadStream();
         var fileType = await FileTypeChecker.FileTypeValidator.GetFileTypeAsync(stream);
@@ -31,20 +31,28 @@ public class MediaService
         return null;
     }
 
-    private async Task<(string path, MediaType type)?> SaveImage(Stream stream, string mediaFolderName, string name)
+    public void RemoveMedia(string relPath)
     {
-        var path = Path.Combine(_environment.WebRootPath, mediaFolderName, $"{name}.webp");
+        // čekal bych že tohle bude asynchronní
+        File.Delete(Path.Combine(_environment.WebRootPath, relPath));
+    }
+
+    private async Task<(string relpath, MediaType type)?> SaveImage(Stream stream, string mediaFolderName, string name)
+    {
+        var relPath = Path.Combine(mediaFolderName, $"{name}.webp");
+        var path = Path.Combine(_environment.WebRootPath, relPath);
         using var image = await Image.LoadAsync(stream);
         await image.SaveAsWebpAsync(path);
-        return (path, MediaType.Image);
+        return (relPath, MediaType.Image);
     }
     
-    private async Task<(string path, MediaType type)?> SaveVideo(Stream stream, string mediaFolderName, string name, string extension)
+    private async Task<(string relpath, MediaType type)?> SaveVideo(Stream stream, string mediaFolderName, string name, string extension)
     {
         // nechce se mi nic konvertovat, prostě to uložím (jinak bych byl závislej na ffmpeg, možná jindy)
-        var path = Path.Combine(_environment.WebRootPath, mediaFolderName, $"{name}.{extension}");
+        var relPath = Path.Combine( mediaFolderName, $"{name}.{extension}");
+        var path = Path.Combine(_environment.WebRootPath, relPath);
         await using var fileStream = new FileStream(path, FileMode.Create);
         await stream.CopyToAsync(fileStream);
-        return (path, MediaType.Video);
+        return (relPath, MediaType.Video);
     }
 }

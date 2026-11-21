@@ -30,14 +30,19 @@ public class Post
         MediaType = mediaType;
     }
 
-    public void ChangeDescription(string description)
+    public void ChangeText(string text)
     {
-        Text = description;
+        Text = text;
     }
 
     public void ChangeSrc(string mediaSrc, MediaType mediaType)
     {
         MediaSrc = mediaSrc;
         MediaType = mediaType;
+    }
+
+    public void ChangeTags(string tags)
+    {
+        Tags = tags;
     }
 }

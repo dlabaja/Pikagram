@@ -8,11 +8,11 @@ public class User : IdentityUser<Guid>
     private static readonly string _defaultAvatarSrc = "/media/avatars/default-avatar.webp";
     private static readonly string _defaultBackgroundSrc = "/media/backgrounds/default-background.webp";
     
-    [MaxLength(100)]
-    public string FirstName { get; }  = string.Empty;
-    [MaxLength(100)]
-    public string LastName { get; }  = string.Empty;
-    public DateTime DateBorn { get; }
+    [MaxLength(50)]
+    public string FirstName { get; set; }  = string.Empty;
+    [MaxLength(50)]
+    public string LastName { get; set; }  = string.Empty;
+    public DateTime DateBorn { get; set; }
     [MaxLength(250)]
     public string Bio { get; private set; } = string.Empty;
     [MaxLength(250)]

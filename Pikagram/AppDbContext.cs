@@ -92,6 +92,8 @@ public class AppDbContext : IdentityDbContext
             entity.HasMany(x => x.Posts)
                 .WithOne()
                 .HasForeignKey(x => x.AuthorId);
+            // User <-> Follower
+            // User má N followerů, Follower patří k 1 Userovi?
             entity.HasMany(x => x.Followers)
                 .WithOne()
                 .HasForeignKey(x => x.FollowerId);

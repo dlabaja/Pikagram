@@ -16,4 +16,11 @@ public class Message
     public Message()
     {
     }
+    
+    public Message(Guid senderId, Guid receiverId, string text)
+    {
+        SenderId = senderId;
+        ReceiverId = receiverId;
+        Text = text;
+    }
 }
