@@ -1,5 +1,5 @@
 @* validace přes PageModel *@
-@model Pikagram.Views.Account.LoginModel
+@model Pikagram.ViewModels.LoginViewModel
 @{
     ViewData["Title"] = "Přihlášení";
 }
@@ -7,8 +7,8 @@
 @* pošle se page modelu, ten to verifikuje a upraví v userManageru *@
 <h1>Přihlásit se</h1>
 <form method="post" class="form">
-    <input type="text" asp-for="Input.Username" placeholder="Přezdívka" required/>
-    <input type="password" asp-for="Input.Password" placeholder="Heslo" required/>
+    <input type="text" asp-for="Username" placeholder="Přezdívka" required/>
+    <input type="password" asp-for="Password" placeholder="Heslo" required/>
 
     <input type="submit" value="Přihlásit se">
 </form>

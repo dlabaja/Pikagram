@@ -9,20 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ChangePasswordViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/LoginViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Footer.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/RegisterViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +65,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6e5addf2eedd4df5947f5d70e94e221935e00/e8/f73c60dc/RazorPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725fa933cfe6416b96a37fff74bf7e7611800/08/0512aaa3/ConfigurationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/Api/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -201,7 +197,8 @@
     <MESSAGE value="dokončování api" />
     <MESSAGE value="solution rename" />
     <MESSAGE value="první migrace" />
-    <option name="LAST_COMMIT_MESSAGE" value="první migrace" />
+    <MESSAGE value="stylování" />
+    <option name="LAST_COMMIT_MESSAGE" value="stylování" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

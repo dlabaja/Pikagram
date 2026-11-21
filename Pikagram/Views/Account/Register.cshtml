@@ -1,4 +1,4 @@
-@model Pikagram.Views.Account.RegisterModel
+@model Pikagram.ViewModels.RegisterViewModel
 @{
     ViewData["Title"] = "Registrace";
 }
@@ -6,35 +6,35 @@
 <h1>Registrace</h1>
 <form method="post" class="form">
     <div class="input-container">
-        <input type="text" asp-for="Input.FirstName" placeholder="Jméno" required/>
-        <input type="text" asp-for="Input.LastName" placeholder="Příjmení" required/>
+        <input type="text" asp-for="FirstName" placeholder="Jméno" required/>
+        <input type="text" asp-for="LastName" placeholder="Příjmení" required/>
     </div>
 
     <div class="input-container">
-        <input type="email" asp-for="Input.Email" placeholder="Email" required/>
-        <input type="text" asp-for="Input.Username" placeholder="Přezdívka" required/>
+        <input type="email" asp-for="Email" placeholder="Email" required/>
+        <input type="text" asp-for="Username" placeholder="Přezdívka" required/>
     </div>
 
     <div class="input-container">
-        <input type="password" asp-for="Input.Password" placeholder="Heslo" required/>
-        <input type="password" asp-for="Input.ConfirmPassword" placeholder="Heslo 2: Electric Boogaloo" required/>
+        <input type="password" asp-for="Password" placeholder="Heslo" required/>
+        <input type="password" asp-for="ConfirmPassword" placeholder="Heslo 2: Electric Boogaloo" required/>
     </div>
 
     <div>
-        <input type="checkbox" asp-for="Input.PrivacyPolicy"/>
-        <label asp-for="Input.PrivacyPolicy">Souhlasím se <a asp-controller="Privacy" asp-action="Index">zpracováním osobních údajů</a></label>
+        <input type="checkbox" asp-for="PrivacyPolicy"/>
+        <label asp-for="PrivacyPolicy">Souhlasím se <a asp-controller="Privacy" asp-action="Index">zpracováním osobních údajů</a></label>
     </div>
 
     <div>
-        <input type="checkbox" asp-for="Input.SonChecked" required/>
-        <label asp-for="Input.SonChecked">Souhlasím, že obětuji svého prvorozeného syna jazyku C</label>
+        <input type="checkbox" asp-for="SonChecked" required/>
+        <label asp-for="SonChecked">Souhlasím, že obětuji svého prvorozeného syna jazyku C</label>
     </div>
 
     <div>
-        <input type="checkbox" asp-for="Input.AnanasChecked" required/>
-        <label asp-for="Input.AnanasChecked">Souhlasím, že ananas na pizzu patří</label>
+        <input type="checkbox" asp-for="AnanasChecked" required/>
+        <label asp-for="AnanasChecked">Souhlasím, že ananas na pizzu patří</label>
     </div>
 
-    <div asp-validation-summary="All"></div>
     <input type="submit" value="Registrovat">
 </form>
+<div asp-validation-summary="All"></div>
