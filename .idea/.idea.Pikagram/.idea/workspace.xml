@@ -9,18 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/MessageController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/PostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +86,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Pikogram: http.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Launch Settings Profile.Pikogram: http.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -178,7 +167,8 @@
     <MESSAGE value="relace, modely" />
     <MESSAGE value="media service" />
     <MESSAGE value="úprava modelů podle zadání" />
-    <option name="LAST_COMMIT_MESSAGE" value="úprava modelů podle zadání" />
+    <MESSAGE value="dokončování api" />
+    <option name="LAST_COMMIT_MESSAGE" value="dokončování api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
