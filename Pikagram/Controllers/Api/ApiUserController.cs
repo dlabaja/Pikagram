@@ -10,7 +10,7 @@ namespace Pikagram.Controllers.Api;
 [Authorize]
 [ApiController]
 [Route("api/users")]
-public class UserController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
+public class ApiUserController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
     public record ChangeMediaRequest(IFormFile Media);
     public record EditProfileRequest(string? Bio);

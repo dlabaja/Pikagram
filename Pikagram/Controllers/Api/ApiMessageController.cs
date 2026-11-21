@@ -10,7 +10,7 @@ namespace Pikagram.Controllers.Api;
 [Authorize]
 [ApiController]
 [Route("api/messages")]
-public class MessageController(AppDbContext db, UserManager<User> userManager) : Controller
+public class ApiMessageController(AppDbContext db, UserManager<User> userManager) : Controller
 {
     public record SendMessageRequest(Guid ReceiverId, string Text);
 

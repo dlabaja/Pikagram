@@ -12,34 +12,10 @@ namespace Pikagram.Controllers.Api;
 [Authorize]
 [ApiController]
 [Route("api/posts")]
-public class PostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
+public class ApiPostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
-    public record CreatePostRequest(string Text, IFormFile Media);
     public record EditPostRequest(string? Text, string? Tags);
     public record CreateCommentRequest(string Content);
-    
-    [HttpPost("create")]
-    public async Task<IActionResult> Create([FromBody] CreatePostRequest request)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-
-        var post = new Post(userId.Value, request.Text, "", MediaType.Image);
-        var saveResult = await mediaService.SaveMedia(request.Media, "posts", post.Id.ToString());
-        if (!saveResult.HasValue)
-        {
-            return BadRequest("Soubor není ani obrázek, ani video");
-        }
-        
-        post.ChangeSrc(saveResult.Value.relpath, saveResult.Value.type);
-            
-        db.Posts.Add(post);
-        await db.SaveChangesAsync();
-        return Ok();
-    }
     
     [HttpPost("{postId:guid}/comment")]
     public async Task<IActionResult> Comment(Guid postId, [FromBody] CreateCommentRequest request)

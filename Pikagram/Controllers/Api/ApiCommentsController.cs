@@ -11,7 +11,7 @@ namespace Pikagram.Controllers.Api;
 [Authorize]
 [ApiController]
 [Route("api/comments")]
-public class CommentsController(AppDbContext db, UserManager<User> userManager) : Controller
+public class ApiCommentsController(AppDbContext db, UserManager<User> userManager) : Controller
 {
     // record = datová třída, properties se vygenerují automaticky
     public record EditCommentRequest(string NewContent);
