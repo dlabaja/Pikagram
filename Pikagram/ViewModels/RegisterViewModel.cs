@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using Pikagram.Attributes;
 
 namespace Pikagram.ViewModels;
 
-public class RegisterViewModel : PageModel
+public class RegisterViewModel
 {
     [Required(ErrorMessage = "Jméno je povinné (Ale můžeš si ho vymyslet).")]
     [StringLength(50, ErrorMessage = "Jméno může mít maximálně 50 znaků.")]
@@ -30,12 +29,12 @@ public class RegisterViewModel : PageModel
     [Compare(nameof(Password), ErrorMessage = "Hesla se neshodují.")]
     public string ConfirmPassword { get; set; } = string.Empty;
 
-    [Range(typeof(bool), "true", "true", ErrorMessage = "Musíš dát své údaje našim partnerům.")]
+    [MustBeTrue(ErrorMessage = "Musíš dát své údaje našim partnerům.")]
     public bool PrivacyPolicy { get; set; }
 
-    [Range(typeof(bool), "true", "true", ErrorMessage = "Musíš svého syna obětovat ve jménu jazyka C.")]
+    [MustBeTrue(ErrorMessage = "Musíš svého syna obětovat ve jménu jazyka C.")]
     public bool SonChecked { get; set; }
 
-    [Range(typeof(bool), "true", "true", ErrorMessage = "Musíš mít rád/a ananas na pizze.")]
+    [MustBeTrue(ErrorMessage = "Musíš mít rád/a ananas na pizze.")]
     public bool AnanasChecked { get; set; }
 }

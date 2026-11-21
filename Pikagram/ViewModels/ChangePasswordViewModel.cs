@@ -1,12 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Pikagram.ViewModels;
 
 // redirectne uživatele na Login
 [Authorize]
-public class ChangePasswordModel : PageModel
+public class ChangePasswordModel
 {
     [Required(ErrorMessage = "Aktuální heslo je povinné.")]
     public string OldPassword { get; set; } = string.Empty;

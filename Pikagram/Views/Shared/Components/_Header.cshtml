@@ -10,7 +10,9 @@
         }
         else
         {
-            <a asp-controller="Account" asp-action="Logout">Odhlásit se</a>
+            <form asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit">Odhlásit se</button>
+            </form>
         }
     </nav>
 </header>

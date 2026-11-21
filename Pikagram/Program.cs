@@ -18,7 +18,15 @@ builder.Services.AddRouting(options =>
     options.LowercaseUrls = true; // url s uppercasem je odporný
 });
 
-builder.Services.AddIdentity<User, IdentityRole<Guid>>(options => { options.Password.RequiredLength = 8; })
+builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
+    {
+        options.Password.RequiredLength = 8;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireDigit = false;
+        options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz0123456789-._";
+    })
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
@@ -37,6 +45,8 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
+app.UseStatusCodePagesWithReExecute("/error/{0}");
 
 app.UseRouting();
 

@@ -1,9 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Pikagram.ViewModels;
 
-public class LoginViewModel : PageModel
+public class LoginViewModel
 {
     [Required(ErrorMessage = "Přezdívka je povinná.")]
     public string Username { get; set; } = string.Empty;

@@ -28,7 +28,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
         }
         
         // LocalRedirect redirectuje relativní cestu (nebo tak nějak), blokuje redirect na cizí doménu
-        return returnUrl != null ? LocalRedirect(returnUrl) : RedirectToPage("/");
+        return LocalRedirect(returnUrl ?? "/");
     }
     
     public IActionResult Register()
@@ -56,12 +56,12 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
 
         if (!result.Succeeded)
         {
-            ModelState.AddModelError(string.Empty, "Registrace selhala, asi nemáte rádi ananas na pizze ;(");
+            ModelState.AddModelError(string.Empty, string.Join(", ", result.Errors));
             return View(model);
         }
 
         await signInManager.SignInAsync(user, true);
-        return returnUrl != null ? LocalRedirect(returnUrl) : RedirectToPage("/");
+        return LocalRedirect(returnUrl ?? "/");
     }
     
     public IActionResult ChangePassword()
@@ -100,6 +100,6 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
     public async Task<IActionResult> Logout()
     {
         await signInManager.SignOutAsync();
-        return RedirectToPage("/");
+        return LocalRedirect("/");
     }
 }
