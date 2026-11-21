@@ -9,15 +9,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/ViewModels/CreatePostViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/BalsamiqSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/publish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/search.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ChangePasswordViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/CommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiUserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/RegisterViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +71,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d1c7e54b15b4204be27f6ff61f142d717200/cd/b28f17ca/WebApplicationBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35f55336d1434ec8a63d951d519840da81a00/0c/50e961d0/UserOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39ff9e0e90ff47acad1210fa2fc1a08f40400/05/d19e837f/Ok.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b7509d0625046e4adb47af257ae47252b2d38/64/5c43e81e/DbSet`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b7509d0625046e4adb47af257ae47252b2d38/c7/3170b91f/CollectionNavigationBuilder`2.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,18 +82,33 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725fa933cfe6416b96a37fff74bf7e7611800/08/0512aaa3/ConfigurationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/ValidateDateBorn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/Api/UserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/PublishController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Follower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Services/MediaService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UserManagerUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/PublishViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Login.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/NotFound.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Profile/[ProfileName].cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Publish/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/ViewModels/ChangePasswordViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/ViewModels/LoginViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/ViewModels/RegisterViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Header.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -95,29 +126,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Pikogram: http.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "XThreadsFramesViewSplitterKey": "0.6147541",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/home/dlabaja/RiderProjects/Pikagram",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Pikogram: http.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.44790256&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dlabaja/RiderProjects/Pikagram&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Pikogram: http">
     <configuration name="Pikogram: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Pikagram/Pikagram.csproj" />
@@ -198,7 +229,12 @@
     <MESSAGE value="solution rename" />
     <MESSAGE value="první migrace" />
     <MESSAGE value="stylování" />
-    <option name="LAST_COMMIT_MESSAGE" value="stylování" />
+    <MESSAGE value="view models (konečně to píšu pro správnou architekturu)" />
+    <MESSAGE value="profil" />
+    <MESSAGE value="error" />
+    <MESSAGE value="migrace" />
+    <MESSAGE value="fixy" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

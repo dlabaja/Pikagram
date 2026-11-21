@@ -27,7 +27,6 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
             return View(model);
         }
         
-        // LocalRedirect redirectuje relativní cestu (nebo tak nějak), blokuje redirect na cizí doménu
         return LocalRedirect(returnUrl ?? "/");
     }
     

@@ -4,6 +4,14 @@
   --footer-height: 60px;
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'BalsamiqSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/BalsamiqSans-Regular.ttf');
+}
+
 * {
   /* height se počítá od border -> padding */
   box-sizing: border-box;
@@ -11,6 +19,7 @@
 
 body {
   margin: 0;
+  font-family: "BalsamiqSans", serif;
 }
 
 input {
@@ -29,6 +38,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 600px;
 }
 
 .input-container {
