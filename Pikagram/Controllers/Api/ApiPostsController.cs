@@ -16,7 +16,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
 {
     public record EditPostRequest(string? Text, string? Tags);
     
-    [HttpGet("{postId:guid}/like")]
+    [HttpPost("{postId:guid}/like")]
     public async Task<IActionResult> Like(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);
@@ -39,7 +39,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         return Ok();
     }
     
-    [HttpGet("{postId:guid}/unlike")]
+    [HttpPost("{postId:guid}/unlike")]
     public async Task<IActionResult> Unlike(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);
@@ -49,7 +49,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         }
 
         var rowsDeleted = await db.Likes
-            .Where(x => x.LikedId == postId && x.UserId == userId && x.LikedType == LikedType.Comment)
+            .Where(x => x.LikedId == postId && x.UserId == userId && x.LikedType == LikedType.Post)
             .ExecuteDeleteAsync();
 
         if (rowsDeleted == 0)
@@ -60,7 +60,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         return Ok();
     }
     
-    [HttpGet("{postId:guid}/edit")]
+    [HttpPost("{postId:guid}/edit")]
     public async Task<IActionResult> EditText(Guid postId, EditPostRequest request)
     {
         var userId = userManager.GetUserGuid(User);
@@ -87,7 +87,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         return Ok();
     }
     
-    [HttpGet("{postId:guid}/delete")]
+    [HttpPost("{postId:guid}/delete")]
     public async Task<IActionResult> Delete(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);

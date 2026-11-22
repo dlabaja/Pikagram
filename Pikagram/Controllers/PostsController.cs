@@ -12,15 +12,20 @@ namespace Pikagram.Controllers;
 public class PostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
     [Route("posts/{*postId:guid}")]
-    public IActionResult PostPage(Guid postId)
+    public async Task<IActionResult> PostPage(Guid postId)
     {
+        var userId = userManager.GetUserGuid(User);
         var post = db.Posts.FirstOrDefault(x => x.Id == postId);
+        var likes = userId.HasValue
+            ? db.Likes.Where(x => x.UserId == userId).ToList()
+            : [];
         ViewBag.Post = post;
+        ViewBag.Likes = likes;
         return View("PostPage");
     }
-    
+
     public record CreateCommentRequest(string Content);
-    
+
     [Authorize]
     [HttpPost("posts/{postId:guid}/comment")]
     public async Task<IActionResult> Comment(Guid postId, [FromForm] CreateCommentRequest request)
@@ -30,14 +35,14 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         {
             return Unauthorized();
         }
-        
+
         var comment = new Comment(userId.Value, postId, request.Content, DateTime.UtcNow);
         db.Comments.Add(comment);
-        
+
         await db.SaveChangesAsync();
         return LocalRedirect($"/posts/{postId}");
     }
-    
+
     [Authorize]
     public IActionResult Create()
     {
@@ -53,7 +58,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         {
             return Unauthorized();
         }
-        
+
         if (!ModelState.IsValid)
         {
             return View(model);
@@ -71,9 +76,9 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         {
             return BadRequest("Soubor není ani obrázek, ani video");
         }
-        
+
         post.ChangeSrc(saveResult.Value.relpath, saveResult.Value.type);
-            
+
         db.Posts.Add(post);
         await db.SaveChangesAsync();
         return LocalRedirect($"/posts/{post.Id}");

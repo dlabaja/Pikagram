@@ -13,7 +13,6 @@ public class Comment
     public bool IsEdited { get; private set; }
     public virtual User Author { get; private set; }
     public virtual Post Post { get; private set; }
-    public virtual List<Like> Likes { get; private set; } = [];
 
     public Comment()
     {

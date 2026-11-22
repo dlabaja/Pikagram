@@ -17,7 +17,6 @@ public class Post
     public DateTime DatePublished { get; } = DateTime.UtcNow;
     public virtual User Author { get; private set; }
     public virtual List<Comment> Comments { get; private set; } = [];
-    public virtual List<Like> Likes { get; private set; } = [];
 
     public Post()
     {

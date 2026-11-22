@@ -1,23 +1,33 @@
-@model Comment
+@model (Comment comment, List<Like> likes)
 
 @{
+    var user = User.Identity?.Name;
     var likedSrc = "/assets/icons/like-filled.png";
     var unlikedSrc = "/assets/icons/like.png";
+    var isLiked = Model.likes.FirstOrDefault(x => x.LikedId == Model.comment.Id) != null;
+    var initLikeSrc = isLiked ? likedSrc : unlikedSrc;
 }
 
 <div class="comment_container">
     <div class="comment__header">
         <div class="comment__author">
-            <img src="@Model.Author.AvatarSrc" class="comment__avatar"/>
-            <a asp-controller="Profile" asp-action="@Model.Author.UserName">
-                <p>@@@Model.Author.UserName</p>
+            <img src="@Model.comment.Author.AvatarSrc" class="comment__avatar"/>
+            <a asp-controller="Profile" asp-action="@Model.comment.Author.UserName">
+                <p>@@@Model.comment.Author.UserName</p>
             </a>
         </div>
         <div class="comment__interaction">
-            <button>
-                <img src="@unlikedSrc" class="comment__interaction-img"/>
-            </button>
-            @if (Model.Author.UserName == User.Identity?.Name)
+            @if (user != null)
+            {
+                <button
+                    id="comment-like-@Model.comment.Id"
+                    value="@isLiked.ToString().ToLower()"
+                    onclick="onToggleLikeComment('comment-like-@Model.comment.Id', '@Model.comment.Id')"
+                >
+                    <img src="@initLikeSrc" class="comment__interaction-img"/>
+                </button>
+            }
+            @if (Model.comment.Author.UserName == User.Identity?.Name)
             {
                 <button>
                     <img src="/assets/icons/edit.png" class="comment__interaction-img"/>
@@ -28,24 +38,24 @@
             }
         </div>
     </div>
-    <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
-    <p>@Model.Text</p>
+    <small>@Model.comment.DatePublished.ToString("dd. MM. yyyy")</small>
+    <p>@Model.comment.Text</p>
 </div>
 <style>
     .comment_container {
         position: relative;
     }
-    
+
     .comment__header {
         display: flex;
         justify-content: space-between;
     }
-    
+
     .comment__author {
         display: flex;
         align-items: center;
     }
-    
+
     .comment__avatar {
         width: 20px;
         height: 20px;
@@ -54,7 +64,7 @@
     }
 
     .comment__interaction {
-        
+
     }
 
     .comment__interaction-img {

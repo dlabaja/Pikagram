@@ -1,1 +1,4 @@
-<partial name="Components/_Post" model="@ViewBag.Post"/>
+<partial
+    name="Components/_Post"
+    model="@((Post)ViewBag.Post, (List<Like>)ViewBag.Likes)"
+/>

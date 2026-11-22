@@ -1,32 +1,38 @@
 @using Pikagram.Enums
-@model Post
+@model (Post post, List<Like> likes)
 
 @{
-    var commentRoute = $"/posts/{Model.Id}/comment";
+    var commentRoute = $"/posts/{Model.post.Id}/comment";
+    var user = User.Identity?.Name;
     var likedSrc = "/assets/icons/like-filled.png";
     var unlikedSrc = "/assets/icons/like.png";
+    var isLiked = Model.likes.FirstOrDefault(x => x.LikedId == Model.post.Id) != null;
+    var initLikeSrc = isLiked ? likedSrc : unlikedSrc;
 }
 
-<div class="post__container" id="@Model.Id">
+<div class="post__container" id="@Model.post.Id">
     <div class="post__media-container">
-        @if (Model.MediaType == MediaType.Image)
+        @if (Model.post.MediaType == MediaType.Image)
         {
-            <img src="@Model.MediaSrc" alt="post" class="post__media"/>
+            <img src="@Model.post.MediaSrc" alt="post" class="post__media"/>
         }
         else
         {
-            <video src="@Model.MediaSrc" class="post__media"></video>
+            <video src="@Model.post.MediaSrc" class="post__media"></video>
         }
         <div class="post__interaction">
-            <button>
-                <img src="@unlikedSrc" class="post__interaction-img"/>
-            </button>
-            @if (Model.Author.UserName == User.Identity?.Name)
+            @if (user != null)
             {
-                <button>
+                <button id="like-@Model.post.Id" value="@isLiked.ToString().ToLower()" onclick="onToggleLikePost('like-@Model.post.Id', '@Model.post.Id')">
+                    <img src="@initLikeSrc" class="post__interaction-img"/>
+                </button>
+            }
+            @if (Model.post.Author.UserName == User.Identity?.Name)
+            {
+                <button id="edit-@Model.post.Id">
                     <img src="/assets/icons/edit.png" class="post__interaction-img"/>
                 </button>
-                <button>
+                <button id="delete-@Model.post.Id">
                     <img src="/assets/icons/remove.png" class="post__interaction-img"/>
                 </button>
             }
@@ -34,14 +40,14 @@
     </div>
     <div class="post__content">
         <div class="post__author">
-            <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
-            <a asp-controller="Profile" asp-action="@Model.Author.UserName">
-                <p>@@@Model.Author.UserName</p>
+            <img src="@Model.post.Author.AvatarSrc" class="post__avatar"/>
+            <a asp-controller="Profile" asp-action="@Model.post.Author.UserName">
+                <p>@@@Model.post.Author.UserName</p>
             </a>
         </div>
-        <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
-        <p>@Model.Text</p>
-        <p>@Model.FormatTags()</p>
+        <small>@Model.post.DatePublished.ToString("dd. MM. yyyy")</small>
+        <p>@Model.post.Text</p>
+        <p>@Model.post.FormatTags()</p>
         <form class="post__comment-form" method="post" action="@commentRoute">
             <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
             <div>
@@ -49,9 +55,9 @@
             </div>
         </form>
         <div class="post__comments">
-            @foreach (var comment in Model.Comments)
+            @foreach (var comment in Model.post.Comments)
             {
-                <partial name="Components/_Comment" model="comment"/>
+                <partial name="Components/_Comment" model="@(comment, Model.likes)"/>
             }
         </div>
     </div>
