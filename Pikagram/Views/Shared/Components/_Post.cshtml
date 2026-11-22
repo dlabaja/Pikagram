@@ -29,9 +29,11 @@
             }
             @if (Model.post.Author.UserName == User.Identity?.Name)
             {
-                <button id="edit-@Model.post.Id">
-                    <img src="/assets/icons/edit.png" class="post__interaction-img"/>
-                </button>
+                <a href="/posts/@Model.post.Id/edit">
+                    <button>
+                        <img src="/assets/icons/edit.png" class="post__interaction-img"/>
+                    </button>
+                </a>
                 <form method="post" action="/posts/@Model.post.Id/delete">
                     <button type="submit">
                         <img src="/assets/icons/remove.png" class="post__interaction-img"/>

@@ -93,6 +93,84 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
     }
     
     [Authorize]
+    [HttpGet("{postId:guid}/edit")]
+    public IActionResult Edit(Guid postId)
+    {
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+        
+        var post = db.Posts.FirstOrDefault(x => x.Id == postId);
+        if (post == null)
+        {
+            return NotFound();
+        }
+
+        if (post.AuthorId != userId)
+        {
+            return Forbid();
+        }
+
+        var model = new EditPostViewModel()
+        {
+            Text = post.Text,
+            Tags = post.Tags
+        };
+
+        ViewBag.Post = post;
+        return View(model);
+    }
+
+    
+    [Authorize]
+    [HttpPost("{postId:guid}/edit")]
+    public async Task<IActionResult> Edit(Guid postId, [FromForm] EditPostViewModel model)
+    {
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+        
+        var post = db.Posts.FirstOrDefault(x => x.Id == postId);
+        if (post == null)
+        {
+            return NotFound();
+        }
+        
+        if (post.AuthorId != userId)
+        {
+            return Forbid();
+        }
+        
+        post.ChangeText(model.Text ?? post.Text);
+        post.ChangeTags(model.Tags ?? post.Tags);
+
+        if (model.Media != null)
+        {
+            var saveResult = await mediaService.SaveMedia(model.Media, "posts", post.Id.ToString());
+            if (!saveResult.HasValue)
+            {
+                return BadRequest("Soubor není ani obrázek, ani video");
+            }
+
+            // kvůli invalidaci cache v browseru, aby tam nezůstal původní obrázek
+            var relpath = $"{saveResult.Value.relpath}?x={DateTime.UtcNow.Ticks}";
+            post.ChangeSrc(relpath, saveResult.Value.type);
+        }
+
+        await db.SaveChangesAsync();
+        return LocalRedirect($"/posts/{post.Id}");
+    }
+    
+    [Authorize]
     [HttpPost("{postId:guid}/delete")]
     public async Task<IActionResult> Delete(Guid postId)
     {

@@ -1,0 +1,32 @@
+@* validace přes PageModel *@
+@model Pikagram.ViewModels.EditPostViewModel
+@{
+    ViewData["Title"] = "Uprav příspěvek";
+}
+
+<h1>Uprav příspěvek</h1>
+<form method="post" enctype="multipart/form-data" class="form">
+    <input type="text" asp-for="Text" placeholder="Popisek"/>
+    <input type="text" asp-for="Tags" placeholder="Tagy (odděl čárkou)"/>
+    <input type="file" asp-for="Media" placeholder="Příspěvek (obrázek/video)"/>
+
+    <input type="submit" value="Upravit">
+</form>
+<div asp-validation-summary="All"></div>
+
+<div class="post-edit__image-container">
+    <span>Aktuální obrázek:</span>
+    <img src="@ViewBag.Post.MediaSrc" class="post-edit__image"/>
+</div>
+<style>
+    .post-edit__image-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .post-edit__image {
+        max-width: 400px;   
+    }
+</style>
+

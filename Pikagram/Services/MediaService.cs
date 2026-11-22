@@ -19,14 +19,14 @@ public class MediaService
         var stream = file.OpenReadStream();
         var fileType = await FileTypeChecker.FileTypeValidator.GetFileTypeAsync(stream);
         stream.Position = 0;
-        if (_imgFormats.Contains(fileType.Name.ToLower()))
+        if (_imgFormats.Contains(fileType.Extension.ToLower()))
         {
             return await SaveImage(stream, mediaFolderName, name);
         }
 
-        if (_videoFormats.Contains(fileType.Name.ToLower()))
+        if (_videoFormats.Contains(fileType.Extension.ToLower()))
         {
-            return await SaveVideo(stream, mediaFolderName, name, fileType.Name.ToLower());
+            return await SaveVideo(stream, mediaFolderName, name, fileType.Extension.ToLower());
         }
 
         return null;
