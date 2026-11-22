@@ -10,7 +10,7 @@ namespace Pikagram.Controllers;
 public class ProfileController(AppDbContext db, UserManager<User> userManager) : Controller
 {
     [HttpGet("{*username}")]
-    public async Task<IActionResult> ProfilePage(string? username, int tab)
+    public IActionResult ProfilePage(string? username, int tab = 1)
     {
         if (username == null)
         {

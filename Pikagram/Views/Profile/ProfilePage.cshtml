@@ -1,4 +1,8 @@
 @{
+    ViewData["Title"] = ViewBag.User.UserName;
+}
+
+@{
     List<Like> likes = ViewBag.Likes;
     List<Post>? posts = (List<Post>?)ViewBag.Posts ?? (List<Post>?)ViewBag.LikedPosts;
     List<Comment>? comments = (List<Comment>?)ViewBag.Comments ?? (List<Comment>?)ViewBag.LikedComments;

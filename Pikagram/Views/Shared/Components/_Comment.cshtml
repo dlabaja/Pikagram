@@ -30,9 +30,6 @@
                 }
                 @if (Model.comment.Author.UserName == User.Identity?.Name)
                 {
-                    <button>
-                        <img src="/assets/icons/edit.png" class="comment__interaction-img"/>
-                    </button>
                     <button onclick="postAndRefresh('/api/comments/@Model.comment.Id/delete')">
                         <img src="/assets/icons/remove.png" class="comment__interaction-img"/>
                     </button>
