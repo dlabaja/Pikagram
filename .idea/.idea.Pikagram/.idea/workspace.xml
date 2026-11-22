@@ -9,22 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/like-filled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/like.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/wwwroot/assets/icons/remove.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikogram.sln.DotSettings.user" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +50,12 @@
     &quot;assignee&quot;: &quot;dlabaja&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/dlabaja/Pikogram.git&quot;,
-    &quot;accountId&quot;: &quot;e349229d-8748-4103-9a7c-29095fb0082f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/dlabaja/Pikagram.git",
+    "accountId": "e349229d-8748-4103-9a7c-29095fb0082f"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d1c7e54b15b4204be27f6ff61f142d717200/cd/b28f17ca/WebApplicationBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35f55336d1434ec8a63d951d519840da81a00/0c/50e961d0/UserOptions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,12 +82,6 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Models/Post.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Services/MediaService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Nav.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -195,7 +184,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="favicon, title" />
     <MESSAGE value="už to vypadá malinko líp" />
     <MESSAGE value="první modely" />
     <MESSAGE value="entity a controllery" />
@@ -213,12 +201,13 @@
     <MESSAGE value="view models (konečně to píšu pro správnou architekturu)" />
     <MESSAGE value="profil" />
     <MESSAGE value="error" />
-    <MESSAGE value="migrace" />
     <MESSAGE value="fixy" />
     <MESSAGE value="nové ikony" />
     <MESSAGE value="přejmenování api controllerů, odštěpení create post" />
     <MESSAGE value="už dokážu nahrát příspěvek" />
     <MESSAGE value="font" />
+    <MESSAGE value="příspěvek + komentáře" />
+    <MESSAGE value="migrace" />
     <MESSAGE value="stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>

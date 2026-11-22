@@ -4,3 +4,4 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 /Pikagram/wwwroot/media
+/Pikagram/database.sqlite
