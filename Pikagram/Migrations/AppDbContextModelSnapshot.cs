@@ -207,8 +207,6 @@ namespace Pikagram.Migrations
 
                     b.HasKey("UserId", "LikedId", "LikedType");
 
-                    b.HasIndex("LikedId");
-
                     b.ToTable("Likes");
                 });
 
@@ -456,18 +454,6 @@ namespace Pikagram.Migrations
 
             modelBuilder.Entity("Pikagram.Models.Like", b =>
                 {
-                    b.HasOne("Pikagram.Models.Comment", null)
-                        .WithMany("Likes")
-                        .HasForeignKey("LikedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Pikagram.Models.Post", null)
-                        .WithMany("Likes")
-                        .HasForeignKey("LikedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Pikagram.Models.User", "User")
                         .WithMany("Likes")
                         .HasForeignKey("UserId")
@@ -507,16 +493,9 @@ namespace Pikagram.Migrations
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("Pikagram.Models.Comment", b =>
-                {
-                    b.Navigation("Likes");
-                });
-
             modelBuilder.Entity("Pikagram.Models.Post", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("Likes");
                 });
 
             modelBuilder.Entity("Pikagram.Models.User", b =>

@@ -61,9 +61,6 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
             entity.HasOne(x => x.Author)
                 .WithMany(x => x.Posts)
                 .HasForeignKey(x => x.AuthorId);
-            entity.HasMany(x => x.Likes)
-                .WithOne()
-                .HasForeignKey(x => x.LikedId);
         });
 
         builder.Entity<Comment>(entity =>
@@ -74,9 +71,6 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
             entity.HasOne(x => x.Post)
                 .WithMany(x => x.Comments)
                 .HasForeignKey(x => x.PostId);
-            entity.HasMany(x => x.Likes)
-                .WithOne()
-                .HasForeignKey(x => x.LikedId);
         });
         
         builder.Entity<Message>(entity =>
