@@ -30,3 +30,9 @@ function onToggleLikeComment(elemId, id) {
         elem.value = "true"
     }
 }
+
+function postAndRefresh(url) {
+    fetch(url, {method: "post"}).then(() => {
+        window.location.reload();
+    })
+}

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Pikagram.Enums;
 using Pikagram.Models;
 using Pikagram.Services;
@@ -9,13 +10,22 @@ using Pikagram.ViewModels;
 
 namespace Pikagram.Controllers;
 
+[Route("posts")]
 public class PostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
-    [Route("posts/{*postId:guid}")]
-    public async Task<IActionResult> PostPage(Guid postId)
+    public record CreateCommentRequest(string Content);
+    
+    [Route("{*postId:guid}")]
+    public IActionResult PostPage(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);
         var post = db.Posts.FirstOrDefault(x => x.Id == postId);
+
+        if (post == null)
+        {
+            return NotFound();
+        }
+        
         var likes = userId.HasValue
             ? db.Likes.Where(x => x.UserId == userId).ToList()
             : [];
@@ -23,11 +33,9 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         ViewBag.Likes = likes;
         return View("PostPage");
     }
-
-    public record CreateCommentRequest(string Content);
-
+    
     [Authorize]
-    [HttpPost("posts/{postId:guid}/comment")]
+    [HttpPost("{postId:guid}/comment")]
     public async Task<IActionResult> Comment(Guid postId, [FromForm] CreateCommentRequest request)
     {
         var userId = userManager.GetUserGuid(User);
@@ -82,5 +90,27 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         db.Posts.Add(post);
         await db.SaveChangesAsync();
         return LocalRedirect($"/posts/{post.Id}");
+    }
+    
+    [Authorize]
+    [HttpPost("{postId:guid}/delete")]
+    public async Task<IActionResult> Delete(Guid postId)
+    {
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+
+        var rowsDeleted = await db.Posts
+            .Where(x => x.Id == postId && x.AuthorId == userId)
+            .ExecuteDeleteAsync();
+
+        if (rowsDeleted == 0)
+        {
+            return NotFound("Příspěvek nenalezen");
+        }
+
+        return LocalRedirect("/");
     }
 }

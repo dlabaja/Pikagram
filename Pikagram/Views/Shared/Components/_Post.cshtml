@@ -32,9 +32,11 @@
                 <button id="edit-@Model.post.Id">
                     <img src="/assets/icons/edit.png" class="post__interaction-img"/>
                 </button>
-                <button id="delete-@Model.post.Id">
-                    <img src="/assets/icons/remove.png" class="post__interaction-img"/>
-                </button>
+                <form method="post" action="/posts/@Model.post.Id/delete">
+                    <button type="submit">
+                        <img src="/assets/icons/remove.png" class="post__interaction-img"/>
+                    </button>
+                </form>
             }
         </div>
     </div>
@@ -120,6 +122,7 @@
 
     .post__interaction {
         position: absolute;
+        display: flex;
         bottom: 0;
         right: 0;
         padding: 8px;

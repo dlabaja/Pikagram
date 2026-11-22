@@ -86,25 +86,4 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
 
         return Ok();
     }
-    
-    [HttpPost("{postId:guid}/delete")]
-    public async Task<IActionResult> Delete(Guid postId)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-
-        var rowsDeleted = await db.Posts
-            .Where(x => x.Id == postId && x.AuthorId == userId)
-            .ExecuteDeleteAsync();
-
-        if (rowsDeleted == 0)
-        {
-            return NotFound("Příspěvek nenalezen");
-        }
-
-        return Ok();
-    }
 }
