@@ -162,10 +162,7 @@ namespace Pikagram.Migrations
                     b.Property<bool>("IsEdited")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("ParentId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("PostId")
+                    b.Property<Guid>("PostId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Text")
@@ -176,8 +173,6 @@ namespace Pikagram.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("ParentId");
 
                     b.HasIndex("PostId");
 
@@ -429,17 +424,15 @@ namespace Pikagram.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pikagram.Models.Comment", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId");
-
-                    b.HasOne("Pikagram.Models.Post", null)
+                    b.HasOne("Pikagram.Models.Post", "Post")
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Author");
 
-                    b.Navigation("Parent");
+                    b.Navigation("Post");
                 });
 
             modelBuilder.Entity("Pikagram.Models.Follower", b =>
