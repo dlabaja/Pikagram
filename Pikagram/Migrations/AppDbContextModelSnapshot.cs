@@ -248,6 +248,9 @@ namespace Pikagram.Migrations
                     b.Property<Guid>("AuthorId")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("DatePublished")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("MediaSrc")
                         .IsRequired()
                         .HasMaxLength(250)

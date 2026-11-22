@@ -14,7 +14,7 @@ public class Post
     [MaxLength(250)] 
     public string MediaSrc { get; private set; } = string.Empty;
     public MediaType MediaType { get; private set; }
-    public DateTime DatePublished { get; } = DateTime.UtcNow;
+    public DateTime DatePublished { get; private set; } = DateTime.UtcNow;
     public virtual User Author { get; private set; }
     public virtual List<Comment> Comments { get; private set; } = [];
 
@@ -49,6 +49,10 @@ public class Post
 
     public string FormatTags()
     {
+        if (string.IsNullOrWhiteSpace(Tags))
+        {
+            return "";
+        }
         return string.Join(" ", Tags.Split(",")
             .Select(x => $"#{x.Trim()}"));
     }
