@@ -8,4 +8,15 @@ public class Follower
     public Guid FollowingId { get; private set; }
     public virtual User FollowerUser { get; private set; }
     public virtual User FollowingUser { get; private set; }
+
+    public Follower()
+    {
+        
+    }
+
+    public Follower(Guid followerId, Guid followingId)
+    {
+        FollowerId = followerId;
+        FollowingId = followingId;
+    }
 }

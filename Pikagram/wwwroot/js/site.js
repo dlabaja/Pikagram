@@ -36,3 +36,13 @@ function postAndRefresh(url) {
         window.location.reload();
     })
 }
+
+function onToggleFollow(followingId, buttonId) {
+    const elem = document.getElementById(buttonId);
+    if (elem.value === "true") {
+        postAndRefresh(`/api/users/${followingId}/unfollow`)
+    }
+    else {
+        postAndRefresh(`/api/users/${followingId}/follow`)
+    }
+}

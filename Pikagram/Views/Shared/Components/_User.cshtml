@@ -1,0 +1,48 @@
+@model (User user, List<Guid> following)
+
+@{
+    var isMe = User.Identity?.Name == Model.user.UserName;
+    var isFollowing = Model.following.Contains(Model.user.Id);
+    var followText = isFollowing ? "Přestat sledovat" : "Sledovat";
+
+}
+
+<div class="user__container">
+    <a href="/profile/@Model.user.UserName" class="user__name">
+        <img src="@Model.user.AvatarSrc" class="user__avatar"/>
+        <span>@@@Model.user.UserName</span>
+    </a>
+    @if (!isMe)
+    {
+        <div>
+            <button
+                id="follow-@Model.user.Id"
+                value="@isFollowing.ToString().ToLower()"
+                onclick="onToggleFollow('@Model.user.Id', 'follow-@Model.user.Id')"
+            >
+                @followText
+            </button>
+        </div>
+    }
+</div>
+<style>
+    .user__container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
+        padding: 8px;
+        border: 1px solid black;
+    }
+
+    .user__name {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .user__avatar {
+        width: 40px;
+        border-radius: 50%;
+    }
+</style>

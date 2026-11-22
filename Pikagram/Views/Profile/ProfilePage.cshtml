@@ -6,6 +6,8 @@
     List<Like> likes = ViewBag.Likes;
     List<Post>? posts = (List<Post>?)ViewBag.Posts ?? (List<Post>?)ViewBag.LikedPosts;
     List<Comment>? comments = (List<Comment>?)ViewBag.Comments ?? (List<Comment>?)ViewBag.LikedComments;
+    var isMe = User.Identity?.Name == ViewBag.User.UserName;
+    var followText = ViewBag.IsFollowing ? "Přestat sledovat" : "Sledovat";
 }
 
 <div class="profile__container">
@@ -14,14 +16,35 @@
         <img src="@ViewBag.User.AvatarSrc" class="profile__avatar"/>
         <div class="profile__gap"></div>
         <div class="profile__name">
-            <h1>@ViewBag.User.FirstName @ViewBag.User.LastName</h1>
-            <h2>@ViewBag.User.UserName</h2>
+            <h1>
+                @ViewBag.User.FirstName @ViewBag.User.LastName
+                @if (isMe)
+                {
+                    <span>(to jsem já)</span>
+                }
+            </h1>
+            <h2>@@@ViewBag.User.UserName</h2>
+            <div>
+                @if (!isMe)
+                {
+                    <button
+                        id="follow-@ViewBag.User.Id"
+                        value="@ViewBag.IsFollowing.ToString().ToLower()"
+                        onclick="onToggleFollow('@ViewBag.User.Id', 'follow-@ViewBag.User.Id')"
+                    >
+                        @followText
+                    </button>
+                }
+                <a href="/profile/@ViewBag.User.UserName/followers">@ViewBag.FollowerCount sledujících</a>
+                <a href="/profile/@ViewBag.User.UserName/following">@ViewBag.FollowingCount sleduje</a>
+            </div>
         </div>
     </div>
     <span>@ViewBag.User.Bio</span>
     <div class="profile__content">
         <div>
-            <select id="profile-select" onchange="window.location.href = `${window.location.pathname}?tab=${this.value}`">
+            <select id="profile-select"
+                    onchange="window.location.href = `${window.location.pathname}?tab=${this.value}`">
                 <option value="1">Příspěvky</option>
                 <option value="2">Oblíbené příspěvky</option>
                 <option value="3">Komentáře</option>
@@ -57,7 +80,7 @@
     .profile__container {
         width: 100%;
     }
-    
+
     .profile__background {
         height: 200px;
         width: 100%;
@@ -84,14 +107,14 @@
         width: fit-content;
         display: flex;
         margin: auto;
-        height: 180px;
+        height: 200px;
     }
 
     .profile__posts {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
-    
+
     .profile__content {
         display: flex;
         flex-direction: column;

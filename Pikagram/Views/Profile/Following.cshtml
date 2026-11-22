@@ -1,0 +1,7 @@
+<div>
+    <h1>Koho sleduje @@@ViewBag.Username</h1>
+    @foreach (var user in ViewBag.Following)
+    {
+        <partial name="Components/_User" model="((User)user, (List<Guid>)ViewBag.UserFollowing)"/>
+    }
+</div>
