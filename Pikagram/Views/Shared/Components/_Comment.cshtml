@@ -1,15 +1,64 @@
 @model Comment
 
-<div>
-    <div class="post__author">
-        <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
-        <a asp-controller="Profile" asp-action="@Model.Author.UserName">
-            <p>@@@Model.Author.UserName</p>
-        </a>
+@{
+    var likedSrc = "/assets/icons/like-filled.png";
+    var unlikedSrc = "/assets/icons/like.png";
+}
+
+<div class="comment_container">
+    <div class="comment__header">
+        <div class="comment__author">
+            <img src="@Model.Author.AvatarSrc" class="comment__avatar"/>
+            <a asp-controller="Profile" asp-action="@Model.Author.UserName">
+                <p>@@@Model.Author.UserName</p>
+            </a>
+        </div>
+        <div class="comment__interaction">
+            <button>
+                <img src="@unlikedSrc" class="comment__interaction-img"/>
+            </button>
+            @if (Model.Author.UserName == User.Identity?.Name)
+            {
+                <button>
+                    <img src="/assets/icons/edit.png" class="comment__interaction-img"/>
+                </button>
+                <button>
+                    <img src="/assets/icons/remove.png" class="comment__interaction-img"/>
+                </button>
+            }
+        </div>
     </div>
     <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
     <p>@Model.Text</p>
 </div>
 <style>
+    .comment_container {
+        position: relative;
+    }
     
+    .comment__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .comment__author {
+        display: flex;
+        align-items: center;
+    }
+    
+    .comment__avatar {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .comment__interaction {
+        
+    }
+
+    .comment__interaction-img {
+        width: 20px;
+        height: 20px;
+    }
 </style>

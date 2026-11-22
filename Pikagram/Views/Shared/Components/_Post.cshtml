@@ -3,6 +3,8 @@
 
 @{
     var commentRoute = $"/posts/{Model.Id}/comment";
+    var likedSrc = "/assets/icons/like-filled.png";
+    var unlikedSrc = "/assets/icons/like.png";
 }
 
 <div class="post__container" id="@Model.Id">
@@ -15,22 +17,38 @@
         {
             <video src="@Model.MediaSrc" class="post__media"></video>
         }
-        <div class="post__content">
-            <div class="post__author">
-                <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
-                <a asp-controller="Profile" asp-action="@Model.Author.UserName">
-                    <p>@@@Model.Author.UserName</p>
-                </a>
+        <div class="post__interaction">
+            <button>
+                <img src="@unlikedSrc" class="post__interaction-img"/>
+            </button>
+            @if (Model.Author.UserName == User.Identity?.Name)
+            {
+                <button>
+                    <img src="/assets/icons/edit.png" class="post__interaction-img"/>
+                </button>
+                <button>
+                    <img src="/assets/icons/remove.png" class="post__interaction-img"/>
+                </button>
+            }
+        </div>
+    </div>
+    <div class="post__content">
+        <div class="post__author">
+            <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
+            <a asp-controller="Profile" asp-action="@Model.Author.UserName">
+                <p>@@@Model.Author.UserName</p>
+            </a>
+        </div>
+        <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
+        <p>@Model.Text</p>
+        <p>@Model.FormatTags()</p>
+        <form class="post__comment-form" method="post" action="@commentRoute">
+            <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
+            <div>
+                <button type="submit">Okomentovat</button>
             </div>
-            <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
-            <p>@Model.Text</p>
-            <p>@Model.FormatTags()</p>
-            <form class="post__comment-form" method="post" action="@commentRoute">
-                <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
-                <div>
-                    <button type="submit">Okomentovat</button>
-                </div>
-            </form>
+        </form>
+        <div class="post__comments">
             @foreach (var comment in Model.Comments)
             {
                 <partial name="Components/_Comment" model="comment"/>
@@ -40,6 +58,7 @@
 </div>
 <style>
     .post__container {
+        display: flex;
         border: 1px solid black;
         width: 100%;
         height: 700px;
@@ -48,19 +67,24 @@
     }
 
     .post__media-container {
+        position: relative;
         display: flex;
         height: 100%;
+        min-width: 60%;
+        max-width: 600px;
     }
 
     .post__media {
-        max-width: 600px;
+        width: 100%;
         height: 100%;
-        width: 60%;
         object-fit: cover;
         border-radius: 12px 0 0 12px;
     }
 
     .post__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         padding: 8px;
     }
 
@@ -81,14 +105,41 @@
         flex-direction: column;
     }
 
+    .post__comments {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow: auto;
+    }
+
+    .post__interaction {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 8px;
+    }
+
+    .post__interaction-img {
+        width: 40px;
+        height: 40px;
+    }
+
     @@media (max-width: 700px) {
-        .post__media-container {
+        .post__container {
             flex-direction: column;
         }
 
         .post__media {
-            width: 100%;
+            height: 500px;
             border-radius: 12px 12px 0 0;
+        }
+
+        .post__content {
+            overflow: auto;
+        }
+
+        .post__comments {
+            overflow: unset;
         }
     }
 </style>
