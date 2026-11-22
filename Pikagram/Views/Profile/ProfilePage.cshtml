@@ -25,7 +25,7 @@
             </h1>
             <h2>@@@ViewBag.User.UserName</h2>
             <div>
-                @if (!isMe)
+                @if (!isMe && User.Identity?.Name != null)
                 {
                     <button
                         id="follow-@ViewBag.User.Id"

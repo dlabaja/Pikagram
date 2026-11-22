@@ -9,18 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/Followers.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/Following.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/ViewModels/SearchViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiUserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Follower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/wwwroot/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/wwwroot/js/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Search/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Search/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Search/Index.cshtml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +85,7 @@
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiCommentsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiPostsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiUserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/PostsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/ProfileController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -209,7 +205,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="identity a logika pro login" />
     <MESSAGE value="relace, modely" />
     <MESSAGE value="media service" />
     <MESSAGE value="úprava modelů podle zadání" />
@@ -233,6 +228,7 @@
     <MESSAGE value="sekce na profilu" />
     <MESSAGE value="fyp" />
     <MESSAGE value="migrace" />
+    <MESSAGE value="follower page" />
     <MESSAGE value="stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>

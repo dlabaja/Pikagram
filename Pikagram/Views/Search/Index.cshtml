@@ -1,5 +1,23 @@
+@model Pikagram.ViewModels.SearchViewModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Najdi kamaráda";
+    var users = (List<User>)ViewBag.Users ?? new List<User>();
 }
 
-<p>Coming soon</p>
+<h1>Najdi si kamarády (for real)</h1>
+<form method="post" class="search__container">
+    <input type="text" asp-for="Text" placeholder="Přezdívka" required/>
+    <div>
+        <input type="submit" value="Najdi uživatele">
+    </div>
+</form>
+<div asp-validation-summary="All"></div>
+@foreach (var user in users)
+{
+    <partial name="Components/_User" model="@(user, (List<Guid>)ViewBag.Following)"/>
+}
+<style>
+    .search__container {
+        display: flex;
+    }
+</style>

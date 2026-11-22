@@ -12,7 +12,7 @@
         <img src="@Model.user.AvatarSrc" class="user__avatar"/>
         <span>@@@Model.user.UserName</span>
     </a>
-    @if (!isMe)
+    @if (!isMe && User.Identity?.Name != null)
     {
         <div>
             <button
@@ -29,6 +29,8 @@
     .user__container {
         display: flex;
         align-items: center;
+        width: 100%;
+        max-width: 400px;
         gap: 8px;
         justify-content: space-between;
         padding: 8px;
