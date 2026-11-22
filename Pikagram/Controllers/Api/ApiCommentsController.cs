@@ -15,17 +15,26 @@ public class ApiCommentsController(AppDbContext db, UserManager<User> userManage
 {
     // record = datová třída, properties se vygenerují automaticky
     public record EditCommentRequest(string NewContent);
-
-    public record ReplyCommentRequest(string Content);
-
+    
     // route se dá i typovat, bengr
     [HttpPost("{commentId:guid}/edit")]
     public async Task<IActionResult> Edit(Guid commentId, [FromBody] EditCommentRequest request)
     {
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+        
         var comment = await db.Comments.FindAsync(commentId);
         if (comment == null)
         {
             return NotFound();
+        }
+
+        if (comment.AuthorId != userId)
+        {
+            return Unauthorized();
         }
 
         comment.Edit(request.NewContent);
@@ -36,7 +45,15 @@ public class ApiCommentsController(AppDbContext db, UserManager<User> userManage
     [HttpPost("{commentId:guid}/delete")]
     public async Task<IActionResult> Delete(Guid commentId)
     {
-        var rowsDeleted = await db.Comments.Where(x => x.Id == commentId).ExecuteDeleteAsync();
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+        
+        var rowsDeleted = await db.Comments
+            .Where(x => x.Id == commentId && x.AuthorId == userId)
+            .ExecuteDeleteAsync();
 
         if (rowsDeleted == 0)
         {

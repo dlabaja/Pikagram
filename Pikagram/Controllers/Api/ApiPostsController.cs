@@ -75,6 +75,11 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
             return NotFound("Příspěvek neexistuje");
         }
 
+        if (post.AuthorId != userId)
+        {
+            return Unauthorized();
+        }
+
         post.ChangeText(request.Text ?? post.Text);
         post.ChangeTags(request.Tags ?? post.Tags);
         await db.SaveChangesAsync();
@@ -92,7 +97,7 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         }
 
         var rowsDeleted = await db.Posts
-            .Where(x => x.Id == postId)
+            .Where(x => x.Id == postId && x.AuthorId == userId)
             .ExecuteDeleteAsync();
 
         if (rowsDeleted == 0)
