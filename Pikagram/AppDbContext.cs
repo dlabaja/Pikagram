@@ -71,9 +71,9 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
             entity.HasOne(x => x.Author)
                 .WithMany(x => x.Comments)
                 .HasForeignKey(x => x.AuthorId);
-            entity.HasOne(x => x.Parent)
-                .WithMany()
-                .HasForeignKey(x => x.ParentId);
+            entity.HasOne(x => x.Post)
+                .WithMany(x => x.Comments)
+                .HasForeignKey(x => x.PostId);
             entity.HasMany(x => x.Likes)
                 .WithOne()
                 .HasForeignKey(x => x.LikedId);

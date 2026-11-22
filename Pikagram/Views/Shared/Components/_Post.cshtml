@@ -1,0 +1,94 @@
+@using Pikagram.Enums
+@model Post
+
+@{
+    var commentRoute = $"/posts/{Model.Id}/comment";
+}
+
+<div class="post__container" id="@Model.Id">
+    <div class="post__media-container">
+        @if (Model.MediaType == MediaType.Image)
+        {
+            <img src="@Model.MediaSrc" alt="post" class="post__media"/>
+        }
+        else
+        {
+            <video src="@Model.MediaSrc" class="post__media"></video>
+        }
+        <div class="post__content">
+            <div class="post__author">
+                <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
+                <a asp-controller="Profile" asp-action="@Model.Author.UserName">
+                    <p>@@@Model.Author.UserName</p>
+                </a>
+            </div>
+            <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
+            <p>@Model.Text</p>
+            <p>@Model.FormatTags()</p>
+            <form class="post__comment-form" method="post" action="@commentRoute">
+                <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
+                <div>
+                    <button type="submit">Okomentovat</button>
+                </div>
+            </form>
+            @foreach (var comment in Model.Comments)
+            {
+                <partial name="Components/_Comment" model="comment"/>
+            }
+        </div>
+    </div>
+</div>
+<style>
+    .post__container {
+        border: 1px solid black;
+        width: 100%;
+        height: 700px;
+        max-width: 1000px;
+        border-radius: 12px;
+    }
+
+    .post__media-container {
+        display: flex;
+        height: 100%;
+    }
+
+    .post__media {
+        max-width: 600px;
+        height: 100%;
+        width: 60%;
+        object-fit: cover;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .post__content {
+        padding: 8px;
+    }
+
+    .post__author {
+        display: flex;
+        align-items: center;
+    }
+
+    .post__avatar {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .post__comment-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @@media (max-width: 700px) {
+        .post__media-container {
+            flex-direction: column;
+        }
+
+        .post__media {
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+        }
+    }
+</style>

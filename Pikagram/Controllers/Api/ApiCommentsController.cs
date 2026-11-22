@@ -46,21 +46,6 @@ public class ApiCommentsController(AppDbContext db, UserManager<User> userManage
         return Ok();
     }
 
-    [HttpPost("{commentId:guid}/reply")]
-    public async Task<IActionResult> Reply(Guid commentId, [FromBody] ReplyCommentRequest request)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-
-        var reply = new Comment(userId.Value, request.Content, DateTime.UtcNow, commentId);
-        db.Comments.Add(reply);
-        await db.SaveChangesAsync();
-        return Ok();
-    }
-
     [HttpPost("{commentId:guid}/like")]
     public async Task<IActionResult> Like(Guid commentId)
     {

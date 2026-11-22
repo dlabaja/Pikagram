@@ -15,23 +15,6 @@ namespace Pikagram.Controllers.Api;
 public class ApiPostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
     public record EditPostRequest(string? Text, string? Tags);
-    public record CreateCommentRequest(string Content);
-    
-    [HttpPost("{postId:guid}/comment")]
-    public async Task<IActionResult> Comment(Guid postId, [FromBody] CreateCommentRequest request)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-        
-        var comment = new Comment(userId.Value, request.Content, DateTime.UtcNow, null);
-        db.Comments.Add(comment);
-        
-        await db.SaveChangesAsync();
-        return Ok();
-    }
     
     [HttpGet("{postId:guid}/like")]
     public async Task<IActionResult> Like(Guid postId)

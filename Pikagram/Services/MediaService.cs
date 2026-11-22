@@ -44,7 +44,7 @@ public class MediaService
         var path = Path.Combine(_environment.WebRootPath, relPath);
         using var image = await Image.LoadAsync(stream);
         await image.SaveAsWebpAsync(path);
-        return (relPath, MediaType.Image);
+        return ("/" + relPath, MediaType.Image);
     }
     
     private async Task<(string relpath, MediaType type)?> SaveVideo(Stream stream, string mediaFolderName, string name, string extension)
@@ -54,6 +54,6 @@ public class MediaService
         var path = Path.Combine(_environment.WebRootPath, relPath);
         await using var fileStream = new FileStream(path, FileMode.Create);
         await stream.CopyToAsync(fileStream);
-        return (relPath, MediaType.Video);
+        return ("/" + relPath, MediaType.Video);
     }
 }

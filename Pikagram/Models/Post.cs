@@ -11,9 +11,10 @@ public class Post
     public string Text { get; private set; } = string.Empty;
     [MaxLength(250)]
     public string Tags { get; private set; } = string.Empty;
-    [MaxLength(250)]
+    [MaxLength(250)] 
     public string MediaSrc { get; private set; } = string.Empty;
     public MediaType MediaType { get; private set; }
+    public DateTime DatePublished { get; } = DateTime.UtcNow;
     public virtual User Author { get; private set; }
     public virtual List<Comment> Comments { get; private set; } = [];
     public virtual List<Like> Likes { get; private set; } = [];
@@ -45,5 +46,11 @@ public class Post
     public void ChangeTags(string tags)
     {
         Tags = tags;
+    }
+
+    public string FormatTags()
+    {
+        return string.Join(" ", Tags.Split(",")
+            .Select(x => $"#{x.Trim()}"));
     }
 }

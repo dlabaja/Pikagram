@@ -15,7 +15,27 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
     public IActionResult PostPage(Guid postId)
     {
         var post = db.Posts.FirstOrDefault(x => x.Id == postId);
+        ViewBag.Post = post;
         return View("PostPage");
+    }
+    
+    public record CreateCommentRequest(string Content);
+    
+    [Authorize]
+    [HttpPost("posts/{postId:guid}/comment")]
+    public async Task<IActionResult> Comment(Guid postId, [FromForm] CreateCommentRequest request)
+    {
+        var userId = userManager.GetUserGuid(User);
+        if (!userId.HasValue)
+        {
+            return Unauthorized();
+        }
+        
+        var comment = new Comment(userId.Value, postId, request.Content, DateTime.UtcNow);
+        db.Comments.Add(comment);
+        
+        await db.SaveChangesAsync();
+        return LocalRedirect($"/posts/{postId}");
     }
     
     [Authorize]

@@ -1,0 +1,15 @@
+@model Comment
+
+<div>
+    <div class="post__author">
+        <img src="@Model.Author.AvatarSrc" class="post__avatar"/>
+        <a asp-controller="Profile" asp-action="@Model.Author.UserName">
+            <p>@@@Model.Author.UserName</p>
+        </a>
+    </div>
+    <small>@Model.DatePublished.ToString("dd. MM. yyyy")</small>
+    <p>@Model.Text</p>
+</div>
+<style>
+    
+</style>
