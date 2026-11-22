@@ -18,6 +18,7 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
         ViewBag.Likes = new List<Like>();
         
         var user = await userManager.GetUserAsync(User);
+        ViewBag.Likes = user?.Likes ?? new List<Like>();
         
         if (tab == 1 || user == null)
         {
@@ -27,8 +28,6 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
                 .ToListAsync();
             return View();
         }
-        
-        ViewBag.Likes = user.Likes;
         
         switch (tab)
         {

@@ -3,5 +3,7 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
-/Pikagram/wwwroot/media
+/Pikagram/wwwroot/media/posts/*
+/Pikagram/wwwroot/media/avatars/*
+/Pikagram/wwwroot/media/backgrounds/*
 /Pikagram/database.sqlite

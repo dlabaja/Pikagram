@@ -25,6 +25,7 @@ public class ProfileController(AppDbContext db, UserManager<User> userManager) :
             .Include(user => user.Followers)
             .Include(user => user.Following)
             .FirstOrDefault(x => x.UserName == username.ToLower());
+        
         if (user == null)
         {
             return NotFound();
@@ -47,7 +48,7 @@ public class ProfileController(AppDbContext db, UserManager<User> userManager) :
                     .Where(x => x.UserId == user.Id && x.LikedType == LikedType.Post)
                     .Select(x => x.LikedId)
                     .ToList();
-                ViewBag.LikedPosts = user.Posts
+                ViewBag.LikedPosts = db.Posts
                     .Where(x => likedIds.Contains(x.Id))
                     .ToList();
                 break;
@@ -59,7 +60,7 @@ public class ProfileController(AppDbContext db, UserManager<User> userManager) :
                     .Where(x => x.UserId == user.Id && x.LikedType == LikedType.Comment)
                     .Select(x => x.LikedId)
                     .ToList();
-                ViewBag.LikedComments = user.Comments
+                ViewBag.LikedComments = db.Comments
                     .Where(x => likedIds.Contains(x.Id))
                     .ToList();
                 break;
