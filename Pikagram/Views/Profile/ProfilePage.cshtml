@@ -1,3 +1,9 @@
+@{
+    List<Like> likes = ViewBag.Likes;
+    List<Post>? posts = (List<Post>?)ViewBag.Posts ?? (List<Post>?)ViewBag.LikedPosts;
+    List<Comment>? comments = (List<Comment>?)ViewBag.Comments ?? (List<Comment>?)ViewBag.LikedComments;
+}
+
 <div class="profile__container">
     <img src="@ViewBag.User.BackgroundSrc" class="profile__background"/>
     <div class="profile__lower">
@@ -9,11 +15,45 @@
         </div>
     </div>
     <span>@ViewBag.User.Bio</span>
+    <div class="profile__content">
+        <div>
+            <select id="profile-select" onchange="window.location.href = `${window.location.pathname}?tab=${this.value}`">
+                <option value="1">Příspěvky</option>
+                <option value="2">Oblíbené příspěvky</option>
+                <option value="3">Komentáře</option>
+                <option value="4">Oblíbené komentáře</option>
+            </select>
+        </div>
+        @if (posts != null)
+        {
+            <div class="profile__posts">
+                @foreach (var post in posts)
+                {
+                    <partial name="Components/_PostPreview" model="@(post, likes)"/>
+                }
+            </div>
+        }
+        else if (comments != null)
+        {
+            foreach (var comment in comments)
+            {
+                <partial name="Components/_Comment" model="@(comment, likes)"/>
+            }
+        }
+    </div>
 </div>
+<script>
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    const element = document.getElementById("profile-select")
+    if (tab) {
+        element.value = tab;
+    }
+</script>
 <style>
     .profile__container {
+        width: 100%;
     }
-
+    
     .profile__background {
         height: 200px;
         width: 100%;
@@ -31,10 +71,6 @@
         top: -50px;
     }
 
-    .profile__name {
-
-    }
-
     .profile__gap {
         width: 230px;
     }
@@ -44,5 +80,17 @@
         width: fit-content;
         display: flex;
         margin: auto;
+        height: 180px;
+    }
+
+    .profile__posts {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .profile__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 </style>

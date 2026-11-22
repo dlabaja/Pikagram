@@ -78,7 +78,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
             return View(model);
         }
 
-        var post = new Post(userId.Value, model.Text, model.Tags, "", MediaType.Image);
+        var post = new Post(userId.Value, model.Text, model.Tags ?? "", "", MediaType.Image);
         var saveResult = await mediaService.SaveMedia(model.Media, "posts", post.Id.ToString());
         if (!saveResult.HasValue)
         {

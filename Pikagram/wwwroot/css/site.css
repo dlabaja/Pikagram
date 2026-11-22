@@ -32,6 +32,11 @@ textarea {
   padding: 8px;
 }
 
+select {
+  height: 40px;
+  padding: 8px;
+}
+
 input {
   height: 40px;
   padding: 8px;
