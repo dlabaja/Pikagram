@@ -1,4 +1,42 @@
-﻿<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿@{
+    List<Like> likes = ViewBag.Likes;
+    List<Post> posts = ViewBag.Posts;
+}
+
+<div class="homepage__container">
+    <div>
+        <select id="homepage-select" onchange="window.location.href = `${window.location.pathname}?tab=${this.value}`">
+            <option value="1">Nové příspěvky</option>
+            <option value="2">Tvoje příspěvky</option>
+            <option value="3">Oblíbené příspěvky</option>
+            <option value="4">Příspěvky lidí co sleduješ</option>
+        </select>
+    </div>
+    <div class="homepage__posts">
+        @foreach (var post in posts)
+        {
+            <partial name="Components/_Post" model="@(post, likes)"/>
+        }
+        <span>Konec FYP, jdi radši ven</span>
+    </div>
 </div>
+<script>
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    const element = document.getElementById("homepage-select")
+    if (tab) {
+        element.value = tab;
+    }
+</script>
+<style>
+    .homepage__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .homepage__posts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+</style>
