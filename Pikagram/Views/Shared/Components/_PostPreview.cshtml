@@ -10,7 +10,7 @@
 }
 
 <div class="post__container" id="@Model.post.Id">
-    <a href="/posts/@Model.post.Id">
+    <a href="/posts/@Model.post.Id" class="post__media-container">
     @if (Model.post.MediaType == MediaType.Image)
     {
         <img src="@Model.post.MediaSrc" alt="post" class="post__media"/>
@@ -48,6 +48,10 @@
         width: 100%;
         height: 400px;
         position: relative;
+    }
+    
+    .post__media-container {
+        width: 100%;
     }
 
     .post__media {

@@ -50,12 +50,15 @@
         <small>@Model.post.DatePublished.ToString("dd. MM. yyyy")</small>
         <p>@Model.post.Text</p>
         <p>@Model.post.FormatTags()</p>
-        <form class="post__comment-form" method="post" action="@commentRoute">
-            <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
-            <div>
-                <button type="submit">Okomentovat</button>
-            </div>
-        </form>
+        @if (User.Identity?.Name != null)
+        {
+            <form class="post__comment-form" method="post" action="@commentRoute">
+                <textarea name="Content" placeholder="Sem napište komentář" required></textarea>
+                <div>
+                    <button type="submit">Okomentovat</button>
+                </div>
+            </form>
+        }
         <div class="post__comments">
             @foreach (var comment in Model.post.Comments)
             {

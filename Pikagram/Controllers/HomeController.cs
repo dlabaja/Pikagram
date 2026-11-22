@@ -18,14 +18,8 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
         ViewBag.Likes = new List<Like>();
         
         var user = await userManager.GetUserAsync(User);
-        if (user == null)
-        {
-            return View();
-        }
-
-        ViewBag.Likes = user.Likes;
         
-        if (tab == 1)
+        if (tab == 1 || user == null)
         {
             ViewBag.Posts = await db.Posts
                 .OrderByDescending(x => x.DatePublished)
@@ -33,6 +27,8 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
                 .ToListAsync();
             return View();
         }
+        
+        ViewBag.Likes = user.Likes;
         
         switch (tab)
         {
