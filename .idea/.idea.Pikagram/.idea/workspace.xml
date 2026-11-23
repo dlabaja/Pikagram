@@ -9,17 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/ViewModels/EditPostViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Pikagram.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Pikagram.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +45,12 @@
     &quot;assignee&quot;: &quot;dlabaja&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dlabaja/Pikagram.git",
-    "accountId": "e349229d-8748-4103-9a7c-29095fb0082f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dlabaja/Pikagram.git&quot;,
+    &quot;accountId&quot;: &quot;e349229d-8748-4103-9a7c-29095fb0082f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d1c7e54b15b4204be27f6ff61f142d717200/cd/b28f17ca/WebApplicationBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/35f55336d1434ec8a63d951d519840da81a00/0c/50e961d0/UserOptions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,14 +64,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725fa933cfe6416b96a37fff74bf7e7611800/08/0512aaa3/ConfigurationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/CommentsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Follower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Services/MediaService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UrlUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UserManagerUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ChangeBackgroundViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/NotFound.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -86,30 +83,14 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiCommentsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiMessageController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiPostsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiUserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/PostsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/ProfileController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/SearchController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Models/Comment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Models/Follower.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Models/Post.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/ViewModels/CreatePostViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Posts/PostPage.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Privacy/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Search/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Comment.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Nav.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_PostPreview.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -129,7 +110,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Pikogram: http.executor": "Debug",
+    ".NET Launch Settings Profile.Pikogram: http.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -212,8 +193,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="media service" />
-    <MESSAGE value="úprava modelů podle zadání" />
     <MESSAGE value="dokončování api" />
     <MESSAGE value="solution rename" />
     <MESSAGE value="první migrace" />
@@ -235,9 +214,11 @@
     <MESSAGE value="fyp" />
     <MESSAGE value="migrace" />
     <MESSAGE value="follower page" />
-    <MESSAGE value="stuff" />
     <MESSAGE value="search" />
-    <option name="LAST_COMMIT_MESSAGE" value="search" />
+    <MESSAGE value="edit příspěvků" />
+    <MESSAGE value="stuff" />
+    <MESSAGE value="změna bia a avataru" />
+    <option name="LAST_COMMIT_MESSAGE" value="změna bia a avataru" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,19 +235,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs</url>
-          <line>68</line>
-          <properties documentPath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" containingFunctionPresentation="Method 'ProfilePage'">
-            <startOffsets>
-              <option value="2156" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2241" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

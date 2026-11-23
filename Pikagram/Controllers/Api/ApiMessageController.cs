@@ -13,7 +13,6 @@ namespace Pikagram.Controllers.Api;
 public class ApiMessageController(AppDbContext db, UserManager<User> userManager) : Controller
 {
     public record SendMessageRequest(Guid ReceiverId, string Text);
-
     
     [HttpPost("send")]
     public async Task<IActionResult> Send([FromBody] SendMessageRequest request)

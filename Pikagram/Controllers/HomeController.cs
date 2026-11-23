@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pikagram.Enums;
 using Pikagram.Models;
-using Pikagram.Utils;
 using Pikagram.Views.Shared;
 
 namespace Pikagram.Controllers;

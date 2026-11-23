@@ -13,35 +13,6 @@ namespace Pikagram.Controllers.Api;
 [Route("api/comments")]
 public class ApiCommentsController(AppDbContext db, UserManager<User> userManager) : Controller
 {
-    // record = datová třída, properties se vygenerují automaticky
-    public record EditCommentRequest(string NewContent);
-    
-    // route se dá i typovat, bengr
-    [HttpPost("{commentId:guid}/edit")]
-    public async Task<IActionResult> Edit(Guid commentId, [FromBody] EditCommentRequest request)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-        
-        var comment = await db.Comments.FindAsync(commentId);
-        if (comment == null)
-        {
-            return NotFound();
-        }
-
-        if (comment.AuthorId != userId)
-        {
-            return Unauthorized();
-        }
-
-        comment.Edit(request.NewContent);
-        await db.SaveChangesAsync();
-        return Ok();
-    }
-
     [HttpPost("{commentId:guid}/delete")]
     public async Task<IActionResult> Delete(Guid commentId)
     {

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pikagram.Enums;
 using Pikagram.Models;
-using Pikagram.Services;
 using Pikagram.Utils;
 
 namespace Pikagram.Controllers.Api;
@@ -12,10 +11,8 @@ namespace Pikagram.Controllers.Api;
 [Authorize]
 [ApiController]
 [Route("api/posts")]
-public class ApiPostsController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
+public class ApiPostsController(AppDbContext db, UserManager<User> userManager) : Controller
 {
-    public record EditPostRequest(string? Text, string? Tags);
-    
     [HttpPost("{postId:guid}/like")]
     public async Task<IActionResult> Like(Guid postId)
     {
@@ -56,33 +53,6 @@ public class ApiPostsController(AppDbContext db, UserManager<User> userManager, 
         {
             return NotFound("Příspěvek žádný tvůj like nemá");
         }
-
-        return Ok();
-    }
-    
-    [HttpPost("{postId:guid}/edit")]
-    public async Task<IActionResult> EditText(Guid postId, EditPostRequest request)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-
-        var post = db.Posts.FirstOrDefault(x => x.Id == postId);
-        if (post == null)
-        {
-            return NotFound("Příspěvek neexistuje");
-        }
-
-        if (post.AuthorId != userId)
-        {
-            return Unauthorized();
-        }
-
-        post.ChangeText(request.Text ?? post.Text);
-        post.ChangeTags(request.Tags ?? post.Tags);
-        await db.SaveChangesAsync();
 
         return Ok();
     }

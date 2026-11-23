@@ -15,7 +15,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
 {
     public record CreateCommentRequest(string Content);
     
-    [Route("{*postId:guid}")]
+    [Route("{postId:guid}")]
     public IActionResult PostPage(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);
