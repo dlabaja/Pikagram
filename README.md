@@ -9,7 +9,7 @@ Nejpoužívanější Instagram klon v Přerově a Ústeckém kraji
 - Správa příspěvků (edit, delete) a komentářů (edit)
 - Hledání uživatelů
 - Uživatelský profil a jeho správa (background, avatar, bio, seznam příspěvků a komentářů)
-- Soukromé zprávy (přes tlačíko na profilu)
+- Soukromé zprávy (přes tlačítko na profilu)
 - Systém sledujících
 - Register/Login/Change Password
 

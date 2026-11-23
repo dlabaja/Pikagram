@@ -9,58 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Avatar.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Footer.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/jsonSchemas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/jsonSchemas.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Services/MediaService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/ChangeAvatarViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel/ChangeAvatarViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/ChangeBackgroundViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel/ChangeBackgroundViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/ChangeBioViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel/ChangeBioViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/ChangePasswordViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ChangePasswordViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/CreatePostViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/CreatePostViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel/ProfileViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/SearchViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/SearchViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/ViewModels/SendMessageViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/ViewModels/SendMessageViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Error/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Message/MessagePage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Message/MessagePage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Posts/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Posts/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Profile/Followers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/Followers.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Profile/Following.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/Following.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Search/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Search/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Avatar.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Avatar.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Comment.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Nav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Error.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Error.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +208,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="view models (konečně to píšu pro správnou architekturu)" />
     <MESSAGE value="profil" />
     <MESSAGE value="error" />
     <MESSAGE value="fixy" />
@@ -274,7 +232,8 @@
     <MESSAGE value="avatar komponenta" />
     <MESSAGE value="funkční zprávy" />
     <MESSAGE value="username v hlavičce" />
-    <option name="LAST_COMMIT_MESSAGE" value="username v hlavičce" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

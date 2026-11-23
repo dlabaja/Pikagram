@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Pikagram.Enums;
 using Pikagram.Models;
 using Pikagram.Services;
-using Pikagram.ViewModels;
 using Pikagram.ViewModels.ProfileViewModel;
 using static Pikagram.Utils.UrlUtils;
 
@@ -15,7 +14,6 @@ namespace Pikagram.Controllers;
 public class UserController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
     [HttpPost("change-background")]
-    [Authorize]
     public async Task<IActionResult> ChangeBackground(
         [FromForm, Bind(Prefix = nameof(ProfileViewModel.BackgroundForm))] ChangeBackgroundViewModel model)
     {
@@ -50,7 +48,6 @@ public class UserController(AppDbContext db, UserManager<User> userManager, Medi
     }
 
     [HttpPost("change-avatar")]
-    [Authorize]
     public async Task<IActionResult> ChangeAvatar(
         [FromForm, Bind(Prefix = nameof(ProfileViewModel.AvatarForm))] ChangeAvatarViewModel model)
     {
@@ -85,7 +82,6 @@ public class UserController(AppDbContext db, UserManager<User> userManager, Medi
     }
 
     [HttpPost("change-bio")]
-    [Authorize]
     public async Task<IActionResult> ChangeBio(
         [FromForm, Bind(Prefix = nameof(ProfileViewModel.BioForm))] ChangeBioViewModel model)
     {

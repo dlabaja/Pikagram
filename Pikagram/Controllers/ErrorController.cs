@@ -10,7 +10,7 @@ public class ErrorController : Controller
         return View();
     }
     
-    [Route("{statusCode:int}")]
+    [HttpGet("{statusCode:int}")]
     public IActionResult HttpStatusCodeHandler(int statusCode)
     {
         if (statusCode == 404)

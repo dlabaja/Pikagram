@@ -159,9 +159,6 @@ namespace Pikagram.Migrations
                     b.Property<DateTime>("DatePublished")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsEdited")
-                        .HasColumnType("INTEGER");
-
                     b.Property<Guid>("PostId")
                         .HasColumnType("TEXT");
 

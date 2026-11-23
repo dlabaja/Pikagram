@@ -7,7 +7,6 @@ namespace Pikagram.Controllers;
 
 public class SearchController(AppDbContext db, UserManager<User> userManager) : Controller
 {
-    [HttpGet]
     public IActionResult Index()
     {
         return View(new SearchViewModel());

@@ -7,6 +7,7 @@ using Pikagram.Models;
 using Pikagram.Services;
 using Pikagram.Utils;
 using Pikagram.ViewModels;
+using static Pikagram.Utils.UrlUtils;
 
 namespace Pikagram.Controllers;
 
@@ -15,7 +16,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
 {
     public record CreateCommentRequest(string Content);
     
-    [Route("{postId:guid}")]
+    [HttpGet("{postId:guid}")]
     public IActionResult PostPage(Guid postId)
     {
         var userId = userManager.GetUserGuid(User);
@@ -52,13 +53,14 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
     }
 
     [Authorize]
+    [HttpGet("create")]
     public IActionResult Create()
     {
-        return View();
+        return View(new CreatePostViewModel());
     }
 
-    [HttpPost]
     [Authorize]
+    [HttpPost("create")]
     public async Task<IActionResult> Create([FromForm] CreatePostViewModel model)
     {
         var userId = userManager.GetUserGuid(User);
@@ -69,12 +71,6 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
 
         if (!ModelState.IsValid)
         {
-            return View(model);
-        }
-
-        if (model.Media == null)
-        {
-            ModelState.AddModelError(nameof(model.Media), "Soubor je prázdný.");
             return View(model);
         }
 
@@ -113,7 +109,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
             return Forbid();
         }
 
-        var model = new EditPostViewModel()
+        var model = new EditPostViewModel
         {
             Text = post.Text,
             Tags = post.Tags
@@ -122,7 +118,6 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
         ViewBag.Post = post;
         return View(model);
     }
-
     
     [Authorize]
     [HttpPost("{postId:guid}/edit")]
@@ -162,8 +157,7 @@ public class PostsController(AppDbContext db, UserManager<User> userManager, Med
             }
 
             // kvůli invalidaci cache v browseru, aby tam nezůstal původní obrázek
-            var relpath = $"{saveResult.Value.relpath}?x={DateTime.UtcNow.Ticks}";
-            post.ChangeSrc(relpath, saveResult.Value.type);
+            post.ChangeSrc(WithRandomQueryParam(saveResult.Value.relpath), saveResult.Value.type);
         }
 
         await db.SaveChangesAsync();
