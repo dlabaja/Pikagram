@@ -21,6 +21,15 @@ public class MessageController(AppDbContext db, UserManager<User> userManager) :
             return Unauthorized();
         }
 
+        var receiver = await db.Users
+            .Where(x => x.Id == receiverId)
+            .FirstOrDefaultAsync();
+
+        if (receiver == null)
+        {
+            return BadRequest("Uživatel nenalezen");
+        }
+
         var messages = await db.Messages
             .Include(x => x.Receiver)
             .Include(x => x.Sender)
@@ -30,7 +39,7 @@ public class MessageController(AppDbContext db, UserManager<User> userManager) :
             .OrderByDescending(x => x.DateSent)
             .ToListAsync();
 
-        ViewBag.ReceiverId = receiverId;
+        ViewBag.Receiver = receiver;
         ViewBag.Messages = messages;
         return View("MessagePage");
     }

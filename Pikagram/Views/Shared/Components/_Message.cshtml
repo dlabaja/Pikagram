@@ -1,23 +1,37 @@
 @model Message
 
 @{
-    
+    var isMe = Model.Sender.UserName == User.Identity?.Name;
 }
 
-<div class="message__container">
-    <partial name="Components/_Avatar" model="@(Model.Sender.AvatarSrc, 20)"/>
-    @Model.Text
-    <small>@Model.DateSent.ToString("hh:mm")</small>
+<div class="message__container @(isMe ? "message__colored" : "")">
+    <partial name="Components/_Avatar" model="@(Model.Sender.AvatarSrc, 30)"/>
+    <div class="message_text">
+        @Model.Text
+        <small>@Model.DateSent.ToString("HH:mm")</small>
+    </div>
+    <div></div>
 </div>
 <style>
     .message__container {
         border: 1px solid black;
         display: flex;
+        flex-direction: row;
+        padding: 8px;
+        gap: 8px;
+        width: fit-content;
+        border-radius: 20px;
+        align-items: center;
+    }
+    
+    .message_text {
+        display: flex;
         flex-direction: column;
     }
     
     .message__colored {
-        background: deepskyblue;
+        flex-direction: row-reverse;
+        background: darkmagenta;
         color: white;
     }
 </style>
