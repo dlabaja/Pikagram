@@ -5,6 +5,7 @@ using Pikagram.Enums;
 using Pikagram.Models;
 using Pikagram.Services;
 using Pikagram.ViewModels;
+using Pikagram.ViewModels.ProfileViewModel;
 using static Pikagram.Utils.UrlUtils;
 
 namespace Pikagram.Controllers;

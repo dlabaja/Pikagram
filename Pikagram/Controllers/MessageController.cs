@@ -58,27 +58,6 @@ public class MessageController(AppDbContext db, UserManager<User> userManager) :
         await db.SaveChangesAsync();
         return LocalRedirect(GetMessageUrl(receiverId));
     }
-
-    [HttpPost("{receiverId:guid}/delete/{messageId:guid}")]
-    public async Task<IActionResult> Delete(Guid receiverId, Guid messageId)
-    {
-        var userId = userManager.GetUserGuid(User);
-        if (!userId.HasValue)
-        {
-            return Unauthorized();
-        }
-
-        var rowsDeleted = await db.Messages
-            .Where(x => x.Id == messageId && x.SenderId == userId)
-            .ExecuteDeleteAsync();
-
-        if (rowsDeleted == 0)
-        {
-            return NotFound();
-        }
-
-        return LocalRedirect(GetMessageUrl(receiverId));
-    }
     
     private string GetMessageUrl(Guid receiverId)
     {

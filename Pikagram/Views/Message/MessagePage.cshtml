@@ -1,19 +1,27 @@
 @model Pikagram.ViewModels.SendMessageViewModel
 
+@{
+    User receiver = ViewBag.Receiver;
+    List<Message> messages = ViewBag.Messages;
+}
+
 <div class="message-page__flex">
-    <h1>Zprávy s @@@ViewBag.Receiver.UserName</h1>
+    <h1>Zprávy s @@@receiver.UserName</h1>
     <div class="message-page__container">
-        @foreach (Message message in ViewBag.Messages)
+        @foreach (Message message in messages)
         {
             var isMe = message.Sender.UserName == User.Identity?.Name;
 
-            <div class="message-page__message-container" style="justify-content: @(isMe ? "end" : "start")">
+            <div
+                class="message-page__message-container"
+                style="justify-content: @(isMe ? "end" : "start")"
+            >
                 <partial name="Components/_Message" model="@message"/>
             </div>
         }
     </div>
     <div>
-        <form method="post" action="/message/@ViewBag.Receiver.Id/send" class="message-page__form">
+        <form method="post" action="/message/@receiver.Id/send" class="message-page__form">
             <input asp-for="Message" type="text" placeholder="zpráva"/>
             <button type="submit">Odeslat</button>
         </form>
@@ -28,7 +36,7 @@
         gap: 16px;
         width: 100%;
     }
-    
+
     .message-page__container {
         display: flex;
         flex-direction: column-reverse;
@@ -36,13 +44,13 @@
         overflow: auto;
         flex-grow: 1;
     }
-    
+
     .message-page__message-container {
         display: flex;
         width: 100%;
         padding: 0 24px;
     }
-    
+
     .message-page__form {
         display: flex;
         flex-direction: row;

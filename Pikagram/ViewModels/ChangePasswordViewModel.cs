@@ -1,10 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Pikagram.ViewModels;
 
-// redirectne uživatele na Login
-[Authorize]
 public class ChangePasswordModel
 {
     [Required(ErrorMessage = "Aktuální heslo je povinné.")]

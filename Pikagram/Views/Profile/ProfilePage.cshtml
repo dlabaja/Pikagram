@@ -1,20 +1,23 @@
-@model Pikagram.ViewModels.ProfileViewModel
+@model Pikagram.ViewModels.ProfileViewModel.ProfileViewModel
 
 @{
     ViewData["Title"] = ViewBag.User.UserName;
-}
 
-@{
+    User user = ViewBag.User;
+    int followerCount = ViewBag.FollowerCount;
+    int followingCount = ViewBag.FollowingCount;
+    bool isFollowing = ViewBag.IsFollowing;
     List<Like> likes = ViewBag.Likes;
-    List<Post>? posts = (List<Post>?)ViewBag.Posts ?? (List<Post>?)ViewBag.LikedPosts;
-    List<Comment>? comments = (List<Comment>?)ViewBag.Comments ?? (List<Comment>?)ViewBag.LikedComments;
+    List<Post>? posts = ViewBag.Posts ?? ViewBag.LikedPosts;
+    List<Comment>? comments = ViewBag.Comments ?? ViewBag.LikedComments;
+    
     var isMe = User.Identity?.Name == ViewBag.User.UserName;
     var followText = ViewBag.IsFollowing ? "Přestat sledovat" : "Sledovat";
 }
 
 <div class="profile__container">
     <div class="profile__background-container">
-        <img src="@ViewBag.User.BackgroundSrc" class="profile__background"/>
+        <img src="@user.BackgroundSrc" class="profile__background"/>
         @if (isMe)
         {
             <form method="post" enctype="multipart/form-data" class="profile__change-background" action="/user/change-background">
@@ -26,36 +29,36 @@
     </div>
     <div class="profile__lower">
         <div class="profile__avatar">
-            <partial name="Components/_Avatar" model="@((string)ViewBag.User.AvatarSrc, 200)"/>
+            <partial name="Components/_Avatar" model="@(user.AvatarSrc, 200)"/>
         </div>
         <div class="profile__gap"></div>
         <div class="profile__name">
             <h1>
-                @ViewBag.User.FirstName @ViewBag.User.LastName
+                @user.FirstName @user.LastName
                 @if (isMe)
                 {
                     <span>(to jsem já)</span>
                 }
             </h1>
-            <h2>@@@ViewBag.User.UserName</h2>
+            <h2>@@@user.UserName</h2>
             <div>
                 @if (User.Identity?.Name != null)
                 {
                     if (!isMe)
                     {
                         <button
-                            id="follow-@ViewBag.User.Id"
-                            value="@ViewBag.IsFollowing.ToString().ToLower()"
-                            onclick="onToggleFollow('@ViewBag.User.Id', 'follow-@ViewBag.User.Id')">
+                            id="follow-@user.Id"
+                            value="@isFollowing.ToString().ToLower()"
+                            onclick="onToggleFollow('@user.Id', 'follow-@user.Id')">
                             @followText
                         </button>
                     }
-                    <a href="/message/@ViewBag.User.Id">
+                    <a href="/message/@user.Id">
                         <button>Napsat zprávu</button>
                     </a>
                 }
-                <a href="/profile/@ViewBag.User.UserName/followers">@ViewBag.FollowerCount sledujících</a>
-                <a href="/profile/@ViewBag.User.UserName/following">@ViewBag.FollowingCount sleduje</a>
+                <a href="/profile/@user.UserName/followers">@followerCount sledujících</a>
+                <a href="/profile/@user.UserName/following">@followingCount sleduje</a>
             </div>
         </div>
     </div>
@@ -82,7 +85,7 @@
         }
         else
         {
-            <span>@ViewBag.User.Bio</span>
+            <span>@user.Bio</span>
         }
         <div>
             <select id="profile-select"

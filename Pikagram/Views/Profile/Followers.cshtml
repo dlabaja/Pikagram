@@ -1,7 +1,13 @@
+@{
+    List<Guid> userFollowing = ViewBag.UserFollowing;
+    List<User> followers = ViewBag.Followers;
+    string username = ViewBag.Username;
+}
+
 <div>
-    <h1>Kdo sleduje @@@ViewBag.Username</h1>
-    @foreach (var user in ViewBag.Followers)
+    <h1>Kdo sleduje @@@username</h1>
+    @foreach (var user in followers)
     {
-        <partial name="Components/_User" model="((User)user, (List<Guid>)ViewBag.UserFollowing)"/>
+        <partial name="Components/_User" model="(user, userFollowing)"/>
     }
 </div>

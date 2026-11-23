@@ -12,5 +12,5 @@ public class CreatePostViewModel
     public string? Tags { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "Vyber obrázek nebo video")]
-    public IFormFile? Media { get; set; }
+    public IFormFile Media { get; set; }
 }

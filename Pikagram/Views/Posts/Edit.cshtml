@@ -1,7 +1,8 @@
-@* validace přes PageModel *@
 @model Pikagram.ViewModels.EditPostViewModel
+
 @{
     ViewData["Title"] = "Uprav příspěvek";
+    Post post = ViewBag.Post;
 }
 
 <h1>Uprav příspěvek</h1>
@@ -16,7 +17,7 @@
 
 <div class="post-edit__image-container">
     <span>Aktuální obrázek:</span>
-    <img src="@ViewBag.Post.MediaSrc" class="post-edit__image"/>
+    <img src="@post.MediaSrc" class="post-edit__image"/>
 </div>
 <style>
     .post-edit__image-container {

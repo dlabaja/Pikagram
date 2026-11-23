@@ -14,17 +14,18 @@
         }
     </title>
     <link rel="stylesheet" href="/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Pikagram.styles.css" asp-append-version="true" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<!--
+@*
 Z Reactu a Astra jsem zvyklý dělat si komponentky a skládat je do sebe. Tady to tak jednoduše nejde, tak to nechám v layoutu 
 Připadám si, jak kdybych programoval v pravěku, ani Hot reload půlku času nefunguje a každej novej partial vyžaduje restart
 Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to nice)
--->
+*@
 
 <body class="layout__body">
 <partial name="Components/_Header"/>
@@ -39,33 +40,9 @@ Jsem rád že se v roce 2026 tohle používá už akorát na backend (kde je to 
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
 
-<!-- 
+@* 
 Vyvíjet se styly v samostatným souboru je neskutečná bolest a některý třídy se mi ani neaplikujou. 
 Má to minimum výhod, takže to budu dělat takhle:
--->
-<style>
-    .layout__body {
-        padding: 0 16px;
-    }
-    
-    .layout__container {
-        display: flex;
-        gap: 16px;
-    }
-    
-    .layout__gap {
-        width: 50px;
-    }
-    
-    .layout__main {
-        min-height: calc(100vh - var(--header-height) - var(--footer-height));
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        max-width: 1200px;
-        width: 100%;
-        align-items: center;
-    }
-</style>
+*@
 </body>
 </html>

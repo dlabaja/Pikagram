@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pikagram.Enums;
 using Pikagram.Models;
-using Pikagram.Views.Shared;
 
 namespace Pikagram.Controllers;
 
@@ -53,11 +52,5 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
         }
 
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

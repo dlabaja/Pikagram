@@ -1,0 +1,23 @@
+.layout__body {
+  padding: 0 16px;
+}
+
+.layout__container {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.layout__gap {
+  width: 48px;
+}
+
+.layout__main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}

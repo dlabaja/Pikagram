@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pikagram.ViewModels;
+namespace Pikagram.ViewModels.ProfileViewModel;
 
 public class ChangeBioViewModel
 {

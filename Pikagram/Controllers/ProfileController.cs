@@ -6,6 +6,7 @@ using Pikagram.Models;
 using Pikagram.Services;
 using Pikagram.Utils;
 using Pikagram.ViewModels;
+using Pikagram.ViewModels.ProfileViewModel;
 
 namespace Pikagram.Controllers;
 

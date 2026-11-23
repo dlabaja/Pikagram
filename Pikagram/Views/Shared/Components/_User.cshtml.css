@@ -1,0 +1,16 @@
+.user__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.user__name {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

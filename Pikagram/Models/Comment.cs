@@ -10,7 +10,6 @@ public class Comment
     [MaxLength(250)] 
     public string Text { get; private set; } = string.Empty;
     public DateTime DatePublished { get; private set; } = DateTime.UtcNow; // nebude bordel v časových zónách
-    public bool IsEdited { get; private set; }
     public virtual User Author { get; private set; }
     public virtual Post Post { get; private set; }
 
@@ -24,11 +23,5 @@ public class Comment
         PostId = postId;
         Text = text;
         DatePublished = datePublished;
-    }
-
-    public void Edit(string newContent)
-    {
-        Text = newContent;
-        IsEdited = true;
     }
 }

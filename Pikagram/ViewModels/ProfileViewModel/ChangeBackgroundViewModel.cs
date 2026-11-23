@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Pikagram.ViewModels;
+namespace Pikagram.ViewModels.ProfileViewModel;
 
-public class ChangeAvatarViewModel
+public class ChangeBackgroundViewModel
 {
     [Required(ErrorMessage = "Vyber obrázek")]
     public IFormFile Media { get; set; }

@@ -5,6 +5,11 @@ namespace Pikagram.Controllers;
 [Route("error")]
 public class ErrorController : Controller
 {
+    public IActionResult Index()
+    {
+        return View();
+    }
+    
     [Route("{statusCode:int}")]
     public IActionResult HttpStatusCodeHandler(int statusCode)
     {
@@ -14,6 +19,6 @@ public class ErrorController : Controller
             return View("NotFound");
         }
 
-        return View("Error", statusCode);
+        return View("Index", statusCode);
     }
 }

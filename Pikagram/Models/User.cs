@@ -5,8 +5,8 @@ namespace Pikagram.Models;
 
 public class User : IdentityUser<Guid>
 {
-    private static readonly string _defaultAvatarSrc = "/media/avatars/default-avatar.webp";
-    private static readonly string _defaultBackgroundSrc = "/media/backgrounds/default-background.webp";
+    private static readonly string DefaultAvatarSrc = "/media/avatars/default-avatar.webp";
+    private static readonly string DefaultBackgroundSrc = "/media/backgrounds/default-background.webp";
     
     [MaxLength(50)]
     public string FirstName { get; init; }  = string.Empty;
@@ -15,9 +15,9 @@ public class User : IdentityUser<Guid>
     [MaxLength(250)]
     public string Bio { get; private set; } = string.Empty;
     [MaxLength(250)]
-    public string AvatarSrc { get; private set; } = _defaultAvatarSrc;
+    public string AvatarSrc { get; private set; } = DefaultAvatarSrc;
     [MaxLength(250)]
-    public string BackgroundSrc { get; private set; } = _defaultBackgroundSrc;
+    public string BackgroundSrc { get; private set; } = DefaultBackgroundSrc;
     public virtual List<Like> Likes { get; private set; } = [];
     public virtual List<Post> Posts { get; private set; } = [];
     public virtual List<Follower> Followers { get; private set; } = [];

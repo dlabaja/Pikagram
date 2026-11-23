@@ -11,7 +11,6 @@ namespace Pikagram;
 //        Post <-> Komentář, Post má N komentářů, každý komentář je pod jedním Postem
 // M:N -> mnoho záznamů ukazuje na více jiných záznamů, too complicated
 //        User <-> User, každý User má M sledujících a každý User N lidí sleduje
-
 public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
     // bez inicializace by tam zůstal null (v tomhle je EpickyORM blbuvzdornější)
@@ -20,16 +19,16 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     public DbSet<Like> Likes => Set<Like>();
     public DbSet<Follower> Followers => Set<Follower>();
     public DbSet<Message> Messages => Set<Message>();
-
-
+    
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
-        
+        // smazal bych to, ale musí to tam zůstat :/    
     }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        base.OnModelCreating(builder); // identity vazby
+        // Identity vazby
+        base.OnModelCreating(builder);
 
         builder.Entity<Follower>(entity =>
         {
@@ -58,6 +57,8 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 
         builder.Entity<Post>(entity =>
         {
+            // User <-> Post
+            // User má N příspěvků, Post má 1 Usera
             entity.HasOne(x => x.Author)
                 .WithMany(x => x.Posts)
                 .HasForeignKey(x => x.AuthorId);
@@ -85,6 +86,6 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
                 .HasForeignKey(x => x.ReceiverId);
         });
         
-        // user už porpojuju z druhé strany, nemusím ho definovat
+        // user už propojuju z druhé strany, nemusím ho definovat
     }
 }

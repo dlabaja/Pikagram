@@ -1,4 +1,9 @@
+@{
+    Post post = ViewBag.Post;
+    List<Like> likes = ViewBag.Likes;
+}
+
 <partial
     name="Components/_Post"
-    model="@((Post)ViewBag.Post, (List<Like>)ViewBag.Likes)"
+    model="@(post, likes)"
 />

@@ -1,4 +1,4 @@
-namespace Pikagram.ViewModels;
+namespace Pikagram.ViewModels.ProfileViewModel;
 
 public class ProfileViewModel
 {

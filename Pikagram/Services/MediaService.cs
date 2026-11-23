@@ -5,7 +5,7 @@ namespace Pikagram.Services;
 
 public class MediaService
 {
-    private IWebHostEnvironment _environment;
+    private readonly IWebHostEnvironment _environment;
     private readonly string[] _imgFormats = ["jpeg", "jpg", "png", "webp", "avif", "gif", "bmp"];
     private readonly string[] _videoFormats = ["mp4", "webm", "mov", "mkv", "avi"];
 
