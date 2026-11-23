@@ -9,7 +9,7 @@
 
 <div class="user__container">
     <a href="/profile/@Model.user.UserName" class="user__name">
-        <img src="@Model.user.AvatarSrc" class="user__avatar"/>
+        <partial name="Components/_Avatar" model="@(Model.user.AvatarSrc, 40)"/>
         <span>@@@Model.user.UserName</span>
     </a>
     @if (!isMe && User.Identity?.Name != null)
@@ -41,10 +41,5 @@
         display: flex;
         gap: 8px;
         align-items: center;
-    }
-
-    .user__avatar {
-        width: 40px;
-        border-radius: 50%;
     }
 </style>

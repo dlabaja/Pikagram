@@ -1,0 +1,16 @@
+@model (string src, int size)
+
+@{
+    var size = $"{Model.size}px";
+}
+
+<img src="@Model.src" class="avatar__img"/>
+<style>
+    .avatar__img {
+        width: @size;
+        height: @size;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid black;
+    }
+</style>

@@ -9,12 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pikagram/Controllers/MessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/ViewModels/SendMessageViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Message/MessagePage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Avatar.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiCommentsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiMessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/Api/ApiPostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +67,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/MessageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Follower.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,12 +77,16 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UserManagerUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ChangeBackgroundViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/SendMessageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/NotFound.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Message/MessagePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Profile/Followers.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Avatar.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
@@ -216,9 +223,9 @@
     <MESSAGE value="follower page" />
     <MESSAGE value="search" />
     <MESSAGE value="edit příspěvků" />
-    <MESSAGE value="stuff" />
     <MESSAGE value="změna bia a avataru" />
-    <option name="LAST_COMMIT_MESSAGE" value="změna bia a avataru" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
