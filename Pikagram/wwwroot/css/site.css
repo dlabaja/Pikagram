@@ -49,6 +49,11 @@ input[type="checkbox"] {
   width: unset;
 }
 
+input[type="file"] {
+  padding: unset;
+  height: fit-content;
+}
+
 .form {
   display: flex;
   flex-direction: column;

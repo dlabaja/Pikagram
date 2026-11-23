@@ -1,3 +1,5 @@
+@model Pikagram.ViewModels.ProfileViewModel
+
 @{
     ViewData["Title"] = ViewBag.User.UserName;
 }
@@ -11,7 +13,17 @@
 }
 
 <div class="profile__container">
-    <img src="@ViewBag.User.BackgroundSrc" class="profile__background"/>
+    <div class="profile__background-container">
+        <img src="@ViewBag.User.BackgroundSrc" class="profile__background"/>
+        @if (isMe)
+        {
+            <form method="post" enctype="multipart/form-data" class="profile__change-background" action="/user/change-background">
+                <div asp-validation-summary="All"></div>
+                <input asp-for="BackgroundForm.Media" type="file" required/>
+                <button type="submit">Změnit pozadí</button>
+            </form>
+        }
+    </div>
     <div class="profile__lower">
         <img src="@ViewBag.User.AvatarSrc" class="profile__avatar"/>
         <div class="profile__gap"></div>
@@ -30,8 +42,7 @@
                     <button
                         id="follow-@ViewBag.User.Id"
                         value="@ViewBag.IsFollowing.ToString().ToLower()"
-                        onclick="onToggleFollow('@ViewBag.User.Id', 'follow-@ViewBag.User.Id')"
-                    >
+                        onclick="onToggleFollow('@ViewBag.User.Id', 'follow-@ViewBag.User.Id')">
                         @followText
                     </button>
                 }
@@ -40,8 +51,31 @@
             </div>
         </div>
     </div>
-    <span>@ViewBag.User.Bio</span>
     <div class="profile__content">
+        @if (isMe)
+        {
+            <form method="post" enctype="multipart/form-data" action="/user/change-avatar">
+                <div asp-validation-summary="All"></div>
+                <input asp-for="AvatarForm.Media" type="file" required/>
+                <div>
+                    <button type="submit">Změnit profilovku</button>
+                </div>
+            </form>   
+        }
+        @if (isMe)
+        {
+            <form method="post" action="/user/change-bio">
+                <div asp-validation-summary="All"></div>
+                <textarea asp-for="BioForm.Bio" required></textarea>
+                <div>
+                    <button type="submit">Aktualizovat Bio</button>
+                </div>
+            </form>
+        }
+        else
+        {
+            <span>@ViewBag.User.Bio</span>
+        }
         <div>
             <select id="profile-select"
                     onchange="window.location.href = `${window.location.pathname}?tab=${this.value}`">
@@ -81,6 +115,22 @@
         width: 100%;
     }
 
+    .profile__background-container {
+        position: relative;
+    }
+
+    .profile__change-background {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
     .profile__background {
         height: 200px;
         width: 100%;
@@ -93,7 +143,8 @@
         border: 1px solid black;
         border-radius: 50%;
         object-fit: cover;
-        max-width: 200px;
+        width: 200px;
+        height: 200px;
         position: absolute;
         top: -50px;
     }

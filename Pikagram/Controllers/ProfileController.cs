@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pikagram.Enums;
 using Pikagram.Models;
+using Pikagram.Services;
 using Pikagram.Utils;
+using Pikagram.ViewModels;
 
 namespace Pikagram.Controllers;
 
 [Route("profile")]
-public class ProfileController(AppDbContext db, UserManager<User> userManager) : Controller
+public class ProfileController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
 {
     [HttpGet("{username}")]
     public IActionResult ProfilePage(string? username, int tab = 1)
@@ -69,7 +71,11 @@ public class ProfileController(AppDbContext db, UserManager<User> userManager) :
         ViewBag.IsFollowing = user.Followers.Select(x => x.FollowerId).Any(x => x == userId);
         ViewBag.Likes = user.Likes;
         ViewBag.User = user;
-        return View("ProfilePage");
+
+        var model = new ProfileViewModel();
+        model.BioForm.Bio = user.Bio;
+        
+        return View("ProfilePage", model);
     }
 
     [HttpGet("{username}/followers")]
