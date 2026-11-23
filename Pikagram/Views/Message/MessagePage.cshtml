@@ -1,0 +1,14 @@
+@model Pikagram.ViewModels.SendMessageViewModel
+
+<div>
+    @foreach (var message in ViewBag.Messages)
+    {
+        <partial name="Components/_Message" model="@message"/>
+    }
+    <div>
+        <form method="post" action="/message/@ViewBag.ReceiverId/send">
+            <input asp-for="Message" type="text" placeholder="zpráva"/>
+            <button type="submit">Odeslat</button>
+        </form>
+    </div>
+</div>

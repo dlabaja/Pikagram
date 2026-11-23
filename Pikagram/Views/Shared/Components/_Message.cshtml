@@ -1,0 +1,23 @@
+@model Message
+
+@{
+    
+}
+
+<div class="message__container">
+    <partial name="Components/_Avatar" model="@(Model.Sender.AvatarSrc, 20)"/>
+    @Model.Text
+    <small>@Model.DateSent.ToString("hh:mm")</small>
+</div>
+<style>
+    .message__container {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .message__colored {
+        background: deepskyblue;
+        color: white;
+    }
+</style>
