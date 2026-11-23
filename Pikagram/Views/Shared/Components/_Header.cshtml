@@ -10,6 +10,7 @@
         }
         else
         {
+            <span>@@@User.Identity?.Name</span>
             <form asp-controller="Account" asp-action="Logout" method="post">
                 <button type="submit">Odhlásit se</button>
             </form>
