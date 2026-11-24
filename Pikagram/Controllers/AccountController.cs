@@ -55,7 +55,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
 
         if (!result.Succeeded)
         {
-            ModelState.AddModelError(string.Empty, string.Join(", ", result.Errors));
+            ModelState.AddModelError(string.Empty, string.Join(", ", result.Errors.Select(x => x.Description)));
             return View(model);
         }
 
@@ -88,7 +88,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
         if (!result.Succeeded)
         {
             ModelState.AddModelError(string.Empty, "Heslo se nezměnilo");
-            return View();
+            return View(model);
         }
         
         return LocalRedirect("/");

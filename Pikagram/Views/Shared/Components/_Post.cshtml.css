@@ -32,6 +32,7 @@
 .post__author {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 .post__avatar {
@@ -72,7 +73,7 @@
   }
 
   .post__media {
-    height: 500px;
+    height: 100%;
     border-radius: 12px 12px 0 0;
   }
 

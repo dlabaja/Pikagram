@@ -11,8 +11,8 @@
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Header.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/_Layout.cshtml.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fed5daf6c43a4b22b7ba93869a49ad9769e00/83/dc2cc1dc/PageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Attributes/MustBeTrue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/MessageModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Controllers/ProfileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Enums/MediaType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Models/Follower.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,11 +70,8 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Services/MediaService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UrlUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Utils/UserManagerUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ChangeBackgroundViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/ProfileViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/ViewModels/SendMessageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Account/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Error/NotFound.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Message/MessagePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Posts/PostPage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -85,21 +81,9 @@
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Message.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Immediate Window" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiCommentsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiMessageController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiPostsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/Api/ApiUserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/HomeController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/MessageController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/PostsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/ProfileController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Message/MessagePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Account/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Header.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Message.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
