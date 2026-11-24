@@ -11,23 +11,24 @@ using Pikagram.ViewModels.ProfileViewModel;
 namespace Pikagram.Controllers;
 
 [Route("profile")]
-public class ProfileController(AppDbContext db, UserManager<User> userManager, MediaService mediaService) : Controller
+public class ProfileController(AppDbContext db, UserManager<User> userManager) : Controller
 {
     [HttpGet("{username}")]
-    public IActionResult ProfilePage(string? username, int tab = 1)
+    public async Task<IActionResult> ProfilePage(string? username, int tab = 1)
     {
         if (username == null)
         {
             return LocalRedirect("/");
         }
         
-        var user = db.Users
+        var user = await db.Users
             .Include(user => user.Posts)
             .Include(user => user.Likes)
             .Include(user => user.Comments)
             .Include(user => user.Followers)
             .Include(user => user.Following)
-            .FirstOrDefault(x => x.UserName == username.ToLower());
+            .FirstOrDefaultAsync(x => x.UserName == username.ToLower());
+        var me = await userManager.GetUserAsync(User);
         
         if (user == null)
         {
@@ -44,33 +45,39 @@ public class ProfileController(AppDbContext db, UserManager<User> userManager, M
         switch (tab)
         {
             case 1:
-                ViewBag.Posts = user.Posts;
+                ViewBag.Posts = user.Posts
+                    .OrderByDescending(x => x.DatePublished)
+                    .ToList();
                 break;
             case 2:
                 likedIds = user.Likes
                     .Where(x => x.UserId == user.Id && x.LikedType == LikedType.Post)
                     .Select(x => x.LikedId)
                     .ToList();
-                ViewBag.LikedPosts = db.Posts
+                ViewBag.LikedPosts = await db.Posts
                     .Where(x => likedIds.Contains(x.Id))
-                    .ToList();
+                    .OrderByDescending(x => x.DatePublished)
+                    .ToListAsync();
                 break;
             case 3:
-                ViewBag.Comments = user.Comments;
+                ViewBag.Comments = user.Comments
+                        .OrderByDescending(x => x.DatePublished)
+                        .ToList();
                 break;
             case 4:
                 likedIds = user.Likes
                     .Where(x => x.UserId == user.Id && x.LikedType == LikedType.Comment)
                     .Select(x => x.LikedId)
                     .ToList();
-                ViewBag.LikedComments = db.Comments
+                ViewBag.LikedComments = await db.Comments
                     .Where(x => likedIds.Contains(x.Id))
-                    .ToList();
+                    .OrderByDescending(x => x.DatePublished)
+                    .ToListAsync();
                 break;
         }
 
         ViewBag.IsFollowing = user.Followers.Select(x => x.FollowerId).Any(x => x == userId);
-        ViewBag.Likes = user.Likes;
+        ViewBag.Likes = me?.Likes ?? [];
         ViewBag.User = user;
 
         var model = new ProfileViewModel();

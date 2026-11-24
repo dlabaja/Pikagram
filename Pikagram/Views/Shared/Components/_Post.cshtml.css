@@ -27,6 +27,7 @@
   flex-direction: column;
   width: 100%;
   padding: 8px;
+  overflow: auto;
 }
 
 .post__author {

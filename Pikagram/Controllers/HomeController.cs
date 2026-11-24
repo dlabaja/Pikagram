@@ -15,7 +15,7 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
         ViewBag.Likes = new List<Like>();
         
         var user = await userManager.GetUserAsync(User);
-        ViewBag.Likes = user?.Likes ?? new List<Like>();
+        ViewBag.Likes = user?.Likes ?? [];
         
         if (tab == 1 || user == null)
         {
@@ -41,11 +41,13 @@ public class HomeController(AppDbContext db, UserManager<User> userManager) : Co
                     .ToListAsync();
                 ViewBag.Posts = user.Posts
                     .Where(x => likedIds.Contains(x.Id))
+                    .OrderByDescending(x => x.DatePublished)
                     .ToList();
                 break;
             case 4:
                 ViewBag.Posts = user.Following
                     .SelectMany(x => x.FollowingUser.Posts)
+                    .OrderByDescending(x => x.DatePublished)
                     .ToList();
                 break;
         }

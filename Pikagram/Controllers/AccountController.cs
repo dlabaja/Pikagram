@@ -20,7 +20,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
             return View(model);
         }
 
-        var result = await signInManager.PasswordSignInAsync(model.Username, model.Password, true, false);
+        var result = await signInManager.PasswordSignInAsync(model.Username.ToLower(), model.Password, true, false);
         if (!result.Succeeded)
         {
             ModelState.AddModelError(string.Empty, "Neplatná přezdívka nebo heslo. Možná tady ani nemáš účet? Měl/a bys používat Password Manager <3");
@@ -48,7 +48,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
             FirstName = model.FirstName,
             LastName = model.LastName,
             Email = model.Email,
-            UserName = model.Username,
+            UserName = model.Username.ToLower(),
         };
 
         var result = await userManager.CreateAsync(user, model.Password);
