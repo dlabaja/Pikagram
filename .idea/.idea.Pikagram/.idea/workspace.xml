@@ -9,15 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0343df2c-5bd8-4bc8-ae61-94f96b559a01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pikagram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/ErrorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/PostsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/SearchController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pikagram/Models/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Models/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_Post.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pikagram/Views/Shared/Components/_PostPreview.cshtml" afterDir="false" />
     </list>
@@ -105,6 +98,7 @@
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Profile/ProfilePage.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Header.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Message.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_Post.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/dlabaja/RiderProjects/Pikagram/Pikagram/Views/Shared/Components/_User.cshtml" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -200,7 +194,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -208,7 +214,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="profil" />
     <MESSAGE value="error" />
     <MESSAGE value="fixy" />
     <MESSAGE value="nové ikony" />
@@ -222,7 +227,6 @@
     <MESSAGE value="delete" />
     <MESSAGE value="sekce na profilu" />
     <MESSAGE value="fyp" />
-    <MESSAGE value="migrace" />
     <MESSAGE value="follower page" />
     <MESSAGE value="search" />
     <MESSAGE value="edit příspěvků" />
@@ -233,7 +237,9 @@
     <MESSAGE value="funkční zprávy" />
     <MESSAGE value="username v hlavičce" />
     <MESSAGE value="cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
+    <MESSAGE value="tweaks" />
+    <MESSAGE value="migrace" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
