@@ -88,11 +88,10 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
         if (!result.Succeeded)
         {
             ModelState.AddModelError(string.Empty, "Heslo se nezměnilo");
+            return View();
         }
-
-        // tady znásilňuju metodu pro chyby, uvidím co to udělá
-        ModelState.AddModelError(string.Empty, "Heslo bylo úspěšně změněno");
-        return View(model);
+        
+        return LocalRedirect("/");
     }
 
     [HttpPost]
