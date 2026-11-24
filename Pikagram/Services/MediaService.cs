@@ -7,7 +7,7 @@ public class MediaService
 {
     private readonly IWebHostEnvironment _environment;
     private readonly string[] _imgFormats = ["jpeg", "jpg", "png", "webp", "avif", "gif", "bmp"];
-    private readonly string[] _videoFormats = ["mp4", "webm", "mov", "mkv", "avi"];
+    private readonly string[] _videoFormats = ["mp4", "webm", "mov", "mkv", "avi", "m4v"];
 
     public MediaService(IWebHostEnvironment environment)
     {
@@ -29,6 +29,7 @@ public class MediaService
             return await SaveVideo(stream, mediaFolderName, name, fileType.Extension.ToLower());
         }
 
+        Console.WriteLine($"Unsupported format {fileType.Extension}");
         return null;
     }
 
